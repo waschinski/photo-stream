@@ -1,5 +1,6 @@
-<li class="item" id="{{ image.name }}">
-	<!-- <a href="#{{ image.name }}"> -->
-		<img src="{{ site.baseurl }}photos/originals/{{ image.name }}" alt="{{ image.name }}" loading="lazy" />
-	<!-- </a> -->
+<li class="item" id="{{ image.name }}" style="background-image: url({{ site.baseurl }}photos/tint/{{ image.name }})">
+	<img src="{{ site.baseurl }}photos/thumbnail/{{ image.name }}" alt="{{ image.name }}" loading="lazy" />
+	<span class="full" style="background-image: url({{ site.baseurl }}photos/original/{{ image.name }})"></span>
+	<a class="open" href="#{{ image.name }}">Open</a>
+	<a class="close" href="#home">Close</a>
 </li>

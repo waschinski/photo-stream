@@ -7,7 +7,7 @@
   <body>
     <ul>
 			{% for image in site.static_files reversed %}
-				{% if image.path contains 'photos' %}
+				{% if image.path contains 'original' %}
 					{% include photo.html %}
 				{% endif %}
 			{% endfor %}

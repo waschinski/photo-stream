@@ -45,6 +45,7 @@ ul {
 		flex-grow: 1;
 		outline: 2px solid #fff;
 		position: relative;
+		background-size: 100%;
 
 // 		&:target {
 // 			position: fixed;
@@ -85,8 +86,84 @@ ul {
 			max-height: 100%;
 			min-width: 100%;
 			object-fit: cover;
-			// vertical-align: bottom;
 			display: block;
+		}
+		
+		.open,
+		.close {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			text-indent: 150%;
+			overflow: hidden;
+			white-space: nowrap;
+		}
+		
+		.open {
+			cursor: zoom-in;
+			background-color: rgba(0, 0, 0, 0);
+			transition: background-color .15s ease-out;
+			
+			&:hover,
+			&:focus {
+				background-color: rgba(0, 0, 0, .1);
+			}
+			
+			&:active {
+				background-color: rgba(0, 0, 0, .25);
+			}
+		}
+		
+		.close {
+			display: none;
+			cursor: zoom-out;
+		}
+		
+		.full {
+			display: none;
+		}
+		
+		&:target {
+			position: fixed;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			height: 100%;
+			z-index: 10;
+			background: #fff;
+			display: flex;
+			align-items: center;
+
+			@media (prefers-color-scheme: dark) {
+				background: #000;
+			}
+			
+			.open {
+				display: none;
+			}
+			
+			.close {
+				display: block;
+			}
+			
+			img {
+				object-fit: contain;
+			}
+			
+			.full {
+				display: block;
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
 		}
 
 // 		.actions {
