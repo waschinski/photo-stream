@@ -7,13 +7,9 @@
   <body>
     <ul>
 			{% for image in site.static_files reversed %}
-			{% if image.path contains 'photos' %}
-			<li class="item" id="{{ image.name }}">
-				<!-- <a href="#{{ image.name }}"> -->
-					<img src="{{ site.baseurl }}photos/originals/{{ image.name }}" alt="{{ image.name }}" loading="lazy" />
-				<!-- </a> -->
-			</li>
-			{% endif %}
+				{% if image.path contains 'photos' %}
+					{% include photo.html %}
+				{% endif %}
 			{% endfor %}
 		</ul>
   </body>

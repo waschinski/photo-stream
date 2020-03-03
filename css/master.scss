@@ -21,6 +21,8 @@ body {
 	}
 }
 
+// PHOTO GRID
+
 ul {
 	display: flex;
 	flex-wrap: wrap;
@@ -84,6 +86,7 @@ ul {
 			min-width: 100%;
 			object-fit: cover;
 			// vertical-align: bottom;
+			display: block;
 		}
 
 // 		.actions {
@@ -197,3 +200,6 @@ ul {
 		}
 	}
 }
+
+// BUTTONS
+
