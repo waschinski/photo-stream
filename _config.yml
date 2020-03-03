@@ -31,17 +31,17 @@ instagram_username:  maxvoltar
 # Build settings
 plugins:
   - jekyll-feed
-  # - jekyll-minimagick
+  - jekyll-minimagick
 
-# mini_magick:
-#   thumbnail:
-#     source: photos/original
-#     destination: photos/thumbnail
-#     resize: "640x640"
-#   tint:
-#     source: photos/original
-#     destination: photos/tint
-#     resize: "1x1"
+mini_magick:
+  thumbnail:
+    source: photos/original
+    destination: photos/thumbnail
+    resize: "640x640"
+  tint:
+    source: photos/original
+    destination: photos/tint
+    resize: "1x1"
 
 # Exclude from processing.
 # The following items will not be processed, by default.
