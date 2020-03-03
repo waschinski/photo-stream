@@ -1,0 +1,199 @@
+---
+---
+
+* {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+@mixin dark {
+	@media (prefers-color-scheme: dark) {
+		@content
+	}
+}
+
+body {
+	background: #fff;
+	
+	@include dark {
+		background: #000;
+	}
+}
+
+ul {
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+	
+	&:after {
+    content: "";
+    display: block;
+    flex-grow: 10;
+		outline: 2px solid #fff;
+		position: relative;
+		
+		@include dark {
+			outline-color: #000;
+		}
+  }
+
+	.item {
+		height: 40vh;
+		flex-grow: 1;
+		outline: 2px solid #fff;
+		position: relative;
+
+// 		&:target {
+// 			position: fixed;
+// 			top: 0;
+// 			right: 0;
+// 			bottom: 0;
+// 			left: 0;
+// 			height: 100%;
+// 			z-index: 10;
+// 			background: #fff;
+// 			display: flex;
+// 			align-items: center;
+// 
+// 			@media (prefers-color-scheme: dark) {
+// 				background: #000;
+// 			}
+// 
+// 			img {
+// 				object-fit: contain;
+// 			}
+// 
+// 			.actions {
+// 				display: none;
+// 			}
+// 
+// 			.view {
+// 				a {
+// 					cursor: zoom-out;
+// 				}
+// 			}
+// 		}
+
+		@include dark {
+			outline-color: #000;
+		}
+
+		img {
+			max-height: 100%;
+			min-width: 100%;
+			object-fit: cover;
+			// vertical-align: bottom;
+		}
+
+// 		.actions {
+// 			position: absolute;
+// 			top: 0;
+// 			right: 0;
+// 			bottom: 0;
+// 			left: 0;
+// 			opacity: 0;
+// 			transition: opacity .1s linear;
+// 
+// 			li {
+// 				outline: 0;
+// 			}
+// 
+// 			.view {
+// 				position: absolute;
+// 				top: 0;
+// 				right: 0;
+// 				bottom: 0;
+// 				left: 0;
+// 				display: flex;
+// 
+// 				a {
+// 					flex-grow: 1;
+// 					text-indent: 150%;
+// 					overflow: hidden;
+// 					white-space: nowrap;
+// 					cursor: zoom-in;
+// 					background: rgba(0, 0, 0, .25);
+// 				}
+// 			}
+// 
+// 			.select,
+// 			.options {
+// 				position: absolute;
+// 				top: 16px;
+// 
+// 				a {
+// 					display: block;
+// 					width: 32px;
+// 					height: 32px;
+// 					border-radius: 50%;
+// 					background: rgba(255, 255, 255, .5);
+// 					text-indent: 150%;
+// 					overflow: hidden;
+// 					white-space: nowrap;
+// 					backdrop-filter: blur(8px);
+// 					cursor: default;
+// 
+// 					&:active {
+// 						background: rgba(255, 255, 255, .25);
+// 					}
+// 				}
+// 			}
+// 
+// 			.select {
+// 				left: 20px;
+// 				top: 20px;
+// 
+// 				a {
+// 					width: 24px;
+// 					height: 24px;
+// 					border-radius: 4px;
+// 				}
+// 			}
+// 
+// 			.options {
+// 				right: 16px;
+// 			}
+// 		}
+
+		// &:hover,
+		// &:focus {
+		// 	.actions {
+		// 		opacity: 1;
+		// 	}
+		// }
+	}
+}
+
+@media (max-aspect-ratio: 1/1) {
+	ul {
+		.item {
+			height: 30vh;
+		}
+	}
+}
+
+@media (max-height: 480px) {
+	ul {
+		.item {
+			height: 80vh;
+		}
+	}
+}
+
+@media (max-aspect-ratio: 1/1) and (max-width: 480px) {
+	ul {
+		flex-direction: row;
+
+		.item {
+			height: auto;
+			width: 100%;
+
+			img {
+				width: 100%;
+				max-height: 75vh;
+				min-width: 0;
+			}
+		}
+	}
+}

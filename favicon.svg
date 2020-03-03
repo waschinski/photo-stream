@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="favicon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" fill="#FFB485" x="0" y="0" width="5" height="7" rx="1"></rect>
+        <rect id="Rectangle-Copy-2" fill="#AAA7D8" x="0" y="9" width="9" height="7" rx="1"></rect>
+        <rect id="Rectangle-Copy" fill="#FEB4D1" x="7" y="0" width="9" height="7" rx="1"></rect>
+        <rect id="Rectangle-Copy-3" fill="#9BDACA" x="11" y="9" width="5" height="7" rx="1"></rect>
+    </g>
+</svg>
