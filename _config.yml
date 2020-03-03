@@ -34,6 +34,10 @@ plugins:
   - jekyll-minimagick
 
 mini_magick:
+  original:
+    source: photos/original
+    destination: photos/original
+    resize: "2048x2048"
   thumbnail:
     source: photos/original
     destination: photos/thumbnail
