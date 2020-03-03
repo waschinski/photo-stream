@@ -32,15 +32,15 @@ instagram_username:  maxvoltar
 plugins:
   - jekyll-feed
 
-# mini_magick:
-#   resize: # Preset name
-#     source: photos/originals # source directory - change this to whatever you want
-#     destination: images/resized # generated destination directory
-#     resize: "1280x1280" # standard imagemagick options - you can chain multiple commands
-#   tint: # Preset name
-#     source: photos/originals # source directory - change this to whatever you want
-#     destination: images/tints # generated destination directory
-#     resize: "1x1" # standard imagemagick options - you can chain multiple commands
+mini_magick:
+  thumbnail:
+    source: photos/original
+    destination: photos/thumbnail
+    resize: "640x640"
+  tint:
+    source: photos/original
+    destination: photos/tint
+    resize: "1x1"
 
 # Exclude from processing.
 # The following items will not be processed, by default.
