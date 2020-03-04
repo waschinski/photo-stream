@@ -1,4 +1,4 @@
-{% capture image_path %}_site/photos/large/{{ image.name }}{% endcapture %}
+{% capture image_path %}photos/original/{{ image.name }}{% endcapture %}
 
 <li class="item" id="{{ image.name }}" style="background-image: url({{ site.baseurl }}photos/tint/{{ image.name }})">
 	<img src="{{ site.baseurl }}photos/thumbnail/{{ image.name }}" alt="{{ image.name }}" height="{{ image_path | exif: 'height'}}" width="{{ image_path | exif: 'width'}}" loading="lazy" />
