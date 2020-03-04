@@ -17,7 +17,7 @@
 body {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	background: #fff;
-	
+
 	@include dark {
 		background: #000;
 	}
@@ -29,14 +29,14 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	position: relative;
-	
+
 	&:after {
     content: "";
     display: block;
     flex-grow: 10;
 		outline: 2px solid #fff;
 		position: relative;
-		
+
 		@include dark {
 			outline-color: #000;
 		}
@@ -61,7 +61,7 @@ body {
 			object-fit: cover;
 			display: block;
 		}
-		
+
 		.open,
 		.close {
 			position: absolute;
@@ -73,31 +73,73 @@ body {
 			overflow: hidden;
 			white-space: nowrap;
 		}
-		
+
 		.open {
 			cursor: zoom-in;
 			background-color: rgba(0, 0, 0, 0);
 			transition: background-color .15s ease-out;
-			
+
 			&:hover,
 			&:focus {
 				background-color: rgba(0, 0, 0, .1);
 			}
-			
+
 			&:active {
 				background-color: rgba(0, 0, 0, .25);
 			}
 		}
-		
+
 		.close {
 			display: none;
 			cursor: zoom-out;
 		}
-		
+
 		.full {
 			display: none;
 		}
-		
+
+		.previous,
+		.next {
+			position: absolute;
+			top: 50%;
+			left: 24px;
+			z-index: 20;
+			display: none;
+			transform: translateY(-50%);
+			text-indent: 150%;
+			overflow: hidden;
+			white-space: nowrap;
+			width: 32px;
+			height: 32px;
+			border-radius: 50%;
+			background: url(../img/icon-left.svg) no-repeat center, linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, .25));
+			// opacity: .5;
+
+		  @supports (-webkit-backdrop-filter: blur(20px)) {
+		    -webkit-backdrop-filter: blur(20px);
+		  }
+
+			&:hover,
+			&:focus {
+				// opacity: .75;
+			}
+
+			&:active {
+				// opacity: .25;
+			}
+		}
+
+		.next {
+			right: 24px;
+			left: auto;
+			background: url(../img/icon-right.svg) no-repeat center, linear-gradient(white, rgba(255, 255, 255, .75));
+		}
+
+		&:first-child .previous,
+		&:last-child .next {
+			display: none !important;
+		}
+
 		// .meta {
 		// 	display: flex;
 		// 	position: absolute;
@@ -106,12 +148,12 @@ body {
 		// 	color: #fff;
 		// 	text-shadow: #000 0 1px 1px, #000 0 2px 4px;
 		// 	opacity: .5;
-		// 	
+		//
 		// 	li {
 		// 		margin-right: 12px;
 		// 	}
 		// }
-		
+
 		&:target {
 			position: fixed;
 			top: 0;
@@ -127,19 +169,19 @@ body {
 			@media (prefers-color-scheme: dark) {
 				background: #000;
 			}
-			
+
 			.open {
 				display: none;
 			}
-			
+
 			.close {
 				display: block;
 			}
-			
+
 			img {
 				object-fit: contain;
 			}
-			
+
 			.full {
 				display: block;
 				position: absolute;
@@ -151,9 +193,14 @@ body {
 				background-repeat: no-repeat;
 				background-position: center;
 			}
-			
-			.meta {
-				display: none !important;
+
+			// .meta {
+			// 	display: none !important;
+			// }
+
+			.previous,
+			.next {
+				display: block;
 			}
 		}
 	}
@@ -192,4 +239,3 @@ body {
 }
 
 // BUTTONS
-
