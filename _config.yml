@@ -45,7 +45,7 @@ image_processing:
   tint:
     source: photos/original
     destination: photos/tint
-    resize_to_limit: [1, 1]
+    resize_to_fill: [1,1]
 
 # exiftag:
 #  sources:
