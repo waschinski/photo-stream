@@ -112,27 +112,30 @@ body {
 			width: 32px;
 			height: 32px;
 			border-radius: 50%;
-			background: url(../img/icon-left.svg) no-repeat center, linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, .25));
-			// opacity: .5;
+			background: rgba(255, 255, 255, .25) url(../img/icon-left.svg) no-repeat center;
 
 		  @supports (-webkit-backdrop-filter: blur(20px)) {
 		    -webkit-backdrop-filter: blur(20px);
 		  }
 
+		  @supports (backdrop-filter: blur(20px)) {
+		    backdrop-filter: blur(20px);
+		  }
+
 			&:hover,
 			&:focus {
-				// opacity: .75;
+				background-color: rgba(255, 255, 255, .35);
 			}
 
 			&:active {
-				// opacity: .25;
+				background-color: rgba(255, 255, 255, .15);
 			}
 		}
 
 		.next {
 			right: 24px;
 			left: auto;
-			background: url(../img/icon-right.svg) no-repeat center, linear-gradient(white, rgba(255, 255, 255, .75));
+			background-image: url(../img/icon-right.svg);
 		}
 
 		&:first-child .previous,
