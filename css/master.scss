@@ -14,8 +14,63 @@
 	}
 }
 
+@mixin button {
+	display: block;
+	border-radius: 16px;
+	text-indent: 150%;
+	overflow: hidden;
+	white-space: nowrap;
+	width: 32px;
+	height: 32px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: rgba(255, 255, 255, .25);
+	transition: background-color .1s linear;
+	-webkit-backdrop-filter: blur(20px);
+	-moz-backdrop-filter: blur(20px);
+	backdrop-filter: blur(20px);
+	
+	&:hover,
+	&:focus {
+		background-color: rgba(255, 255, 255, .5);
+	}
+	
+	&:active {
+		background-color: rgba(255, 255, 255, .25);
+	}
+	
+// 	@supports (-webkit-backdrop-filter: blur(20px)) {
+// 		background-color: rgba(255, 255, 255, .25);
+// 		-webkit-backdrop-filter: blur(20px);
+// 		
+// 		&:hover,
+// 		&:focus {
+// 			background-color: rgba(255, 255, 255, .35);
+// 		}
+// 		
+// 		&:active {
+// 			background-color: rgba(255, 255, 255, .15);
+// 		}
+// 	}
+// 
+// 	@supports (backdrop-filter: blur(20px)) {
+// 		background-color: rgba(255, 255, 255, .25);
+// 		backdrop-filter: blur(20px);
+// 		
+// 		&:hover,
+// 		&:focus {
+// 			background-color: rgba(255, 255, 255, .35);
+// 		}
+// 		
+// 		&:active {
+// 			background-color: rgba(255, 255, 255, .15);
+// 		}
+// 	}
+	
+}
+
 body {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font: 16px/24px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	background: #fff;
 
 	@include dark {
@@ -81,11 +136,11 @@ body {
 
 			&:hover,
 			&:focus {
-				background-color: rgba(0, 0, 0, .1);
+				background-color: rgba(0, 0, 0, .25);
 			}
 
 			&:active {
-				background-color: rgba(0, 0, 0, .25);
+				background-color: rgba(0, 0, 0, .5);
 			}
 		}
 
@@ -105,42 +160,26 @@ body {
 			bottom: 0;
 			left: 0;
 			z-index: 20;
-			width: 10vw;
-			max-width: 192px;
-			min-width: 80px;
+			width: 80px;
 			display: none;
 			align-items: center;
 			justify-content: center;
 			
 			span {
-				border-radius: 50%;
-				text-indent: 150%;
-				overflow: hidden;
-				white-space: nowrap;
-				width: 32px;
-				height: 32px;
-				background: rgba(255, 255, 255, .25) url(../img/icon-left.svg) no-repeat center;
-				transition: background-color .1s linear;
-				
-				@supports (-webkit-backdrop-filter: blur(20px)) {
-					-webkit-backdrop-filter: blur(20px);
-				}
-	
-				@supports (backdrop-filter: blur(20px)) {
-					backdrop-filter: blur(20px);
-				}
+				@include button;
+				background-image: url(../img/icon-left.svg);
 			}
 			
 			&:hover,
 			&:focus {
 				span {
-					background-color: rgba(255, 255, 255, .35);
+					background-color: rgba(255, 255, 255, .5);
 				}
 			}
 
 			&:active {
 				span {
-					background-color: rgba(255, 255, 255, .15);
+					background-color: rgba(255, 255, 255, .25);
 				}
 			}
 		}
@@ -225,6 +264,34 @@ body {
 	}
 }
 
+.links {
+	position: fixed;
+	bottom: 24px;
+	right: 24px;
+	display: flex;
+	flex-wrap: wrap;
+	
+	li {
+		margin-left: 12px;
+		
+		a {
+			@include button;
+		}
+		
+		&.info {
+			a {
+				background-image: url(../img/icon-info.svg);
+			}
+		}
+		
+		&.twitter {
+			a {
+				background-image: url(../img/icon-twitter.svg);
+			}
+		}
+	}
+}
+
 @media (max-aspect-ratio: 1/1) {
 	.grid {
 		.item {
@@ -258,8 +325,6 @@ body {
 			.next {
 				width: 25vw;
 				max-width: auto;
-				opacity: 0;
-				transition: opacity .1s linear;
 				
 				span {
 					display: none;
@@ -267,23 +332,11 @@ body {
 				
 				&:hover,
 				&:focus {
-					opacity: .25;
+					span {
+						display: block;
+					}
 				}
-				
-				&:active {
-					opacity: .5;
-				}
-			}
-			
-			.previous {
-				background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-			}
-			
-			.next {
-				background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
 			}
 		}
 	}
 }
-
-// BUTTONS
