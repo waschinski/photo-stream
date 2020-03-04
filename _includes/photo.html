@@ -1,6 +1,13 @@
+{% capture image_path %}_site/photos/large/{{ image.name }}{% endcapture %}
+
 <li class="item" id="{{ image.name }}" style="background-image: url({{ site.baseurl }}photos/tint/{{ image.name }})">
-	<img src="{{ site.baseurl }}photos/thumbnail/{{ image.name }}" alt="{{ image.name }}" loading="lazy" />
-	<span class="full" style="background-image: url({{ site.baseurl }}photos/original/{{ image.name }})"></span>
+	<img src="{{ site.baseurl }}photos/thumbnail/{{ image.name }}" alt="{{ image.name }}" height="{{ image_path | exif: 'height'}}" width="{{ image_path | exif: 'width'}}" loading="lazy" />
+	<span class="full" style="background-image: url({{ site.baseurl }}photos/large/{{ image.name }})"></span>
 	<a class="open" href="#{{ image.name }}">Open</a>
 	<a class="close" href="#home">Close</a>
+	<!-- <ul class="meta">
+		<li>{{ image_path | exif: 'model'}}</li>
+		<li>{{ image_path | exif: 'exposure_time.to_s'}}</li>
+		<li><span class="aparture"><em>f</em>/</span>{{ image_path | exif: 'f_number.to_f'}}</li>
+	</ul> -->
 </li>

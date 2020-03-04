@@ -5,7 +5,7 @@
 <html>
   {% include head.html %}
   <body>
-    <ul>
+    <ul class="grid">
 			{% for image in site.static_files reversed %}
 				{% if image.path contains 'original' %}
 					{% include photo.html %}

@@ -32,11 +32,12 @@ instagram_username:  maxvoltar
 plugins:
   - jekyll-feed
   - jekyll-minimagick
+  - jekyll-exif-data
 
 mini_magick:
-  original:
+  large:
     source: photos/original
-    destination: photos/original
+    destination: photos/large
     resize: "2048x2048"
   thumbnail:
     source: photos/original
@@ -46,6 +47,10 @@ mini_magick:
     source: photos/original
     destination: photos/tint
     resize: "1x1"
+
+# exiftag:
+#  sources:
+#    - photos/original
 
 # Exclude from processing.
 # The following items will not be processed, by default.
