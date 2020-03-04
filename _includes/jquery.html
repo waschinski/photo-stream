@@ -6,8 +6,8 @@
     }
 	});
 	// $('.item').click(function() {
-	// 	var previous = $(this).prev('li');
-	// 	var next = $(this).next('li');
+	// 	var previous = $("li:target").prev('li');
+	// 	var next = $("li:target").next('li');
 	// 	$(document).keydown(function(e){
 	//     switch (e.which){
 	//     case 37:
@@ -33,4 +33,5 @@
 		console.log('#' +  previous.attr('id') );
 		return false;
 	});
+	lazyload();
 </script>

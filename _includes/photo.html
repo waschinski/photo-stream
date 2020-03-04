@@ -1,7 +1,7 @@
 {% capture image_path %}photos/original/{{ image.name }}{% endcapture %}
 
 <li class="item" id="{{ image.name }}" style="background-image: url({{ site.baseurl }}photos/tint/{{ image.name }})">
-	<img src="{{ site.baseurl }}photos/thumbnail/{{ image.name }}" alt="{{ image.name }}" height="{{ image_path | exif: 'height'}}" width="{{ image_path | exif: 'width'}}" loading="lazy" />
+	<img class="lazyload" data-src="{{ site.baseurl }}photos/thumbnail/{{ image.name }}" src="{{ site.baseurl }}photos/tint/{{ image.name }}" alt="{{ image.name }}" height="{{ image_path | exif: 'height'}}" width="{{ image_path | exif: 'width'}}" loading="lazy" />
 	<span class="full" style="background-image: url({{ site.baseurl }}photos/large/{{ image.name }})"></span>
 	<a class="open" href="#{{ image.name }}">Open</a>
 	<a class="close" href="#home">Close</a>
