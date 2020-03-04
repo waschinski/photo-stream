@@ -113,6 +113,7 @@ body {
 			height: 32px;
 			border-radius: 50%;
 			background: rgba(255, 255, 255, .25) url(../img/icon-left.svg) no-repeat center;
+			transition: background-color .1s linear;
 
 		  @supports (-webkit-backdrop-filter: blur(20px)) {
 		    -webkit-backdrop-filter: blur(20px);
