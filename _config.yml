@@ -8,7 +8,7 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 #
-# If you need help with YAML syntax, here are some quick references for you: 
+# If you need help with YAML syntax, here are some quick references for you:
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
 #
@@ -31,22 +31,21 @@ instagram_username:  maxvoltar
 # Build settings
 plugins:
   - jekyll-feed
-  - jekyll-minimagick
   - jekyll-exif-data
 
-mini_magick:
+image_processing:
   large:
     source: photos/original
     destination: photos/large
-    resize: "2048x2048"
+    resize_to_limit: [2048, 2048]
   thumbnail:
     source: photos/original
     destination: photos/thumbnail
-    resize: "640x640"
+    resize_to_limit: [640, 640]
   tint:
     source: photos/original
     destination: photos/tint
-    resize: "1x1"
+    resize_to_limit: [1, 1]
 
 # exiftag:
 #  sources:
