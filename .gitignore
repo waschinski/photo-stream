@@ -2,6 +2,5 @@ _site
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
+.nova
 vendor
-photos/.DS_Store
-photos/.DS_Store
