@@ -1,0 +1,28 @@
+<script>
+	const ESCAPE = 27;
+	document.addEventListener("keydown", (event) => {
+	  if (event.keyCode === ESCAPE) {
+			window.location = '#home';
+			console.log('Going #home');
+	  }
+	});
+	const handleNextClick = (event) => {
+	  const next = event.target.closest("li").nextElementSibling;
+		window.location = '#' + next.getAttribute('id');
+		console.log('OHAI #' +  next.getAttribute('id'));
+	  event.preventDefault();
+	};
+	const handlePreviousClick = (event) => {
+	  const next = event.target.closest("li").previousElementSibling;
+		window.location = '#' + next.getAttribute('id');
+		console.log(`Going back to #${next.getAttribute('id')}`);
+	  event.preventDefault();
+	};
+	Array.from(document.querySelectorAll(".next")).forEach((element) => {
+	  element.addEventListener("click", handleNextClick);
+	});
+	Array.from(document.querySelectorAll(".previous")).forEach((element) => {
+	  element.addEventListener("click", handlePreviousClick);
+	});
+	lazyload();
+</script>
