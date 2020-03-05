@@ -6,6 +6,7 @@
 	margin: 0;
 	list-style: none;
 	font-size: 1em;
+	box-sizing: border-box;
 }
 
 @mixin dark {
@@ -23,7 +24,7 @@
 	width: 32px;
 	height: 32px;
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position: 8px;
 	background-color: rgba(255, 255, 255, .25);
 	transition: background-color .1s linear;
 	-webkit-backdrop-filter: blur(20px);
@@ -38,35 +39,6 @@
 	&:active {
 		background-color: rgba(255, 255, 255, .25);
 	}
-	
-// 	@supports (-webkit-backdrop-filter: blur(20px)) {
-// 		background-color: rgba(255, 255, 255, .25);
-// 		-webkit-backdrop-filter: blur(20px);
-// 		
-// 		&:hover,
-// 		&:focus {
-// 			background-color: rgba(255, 255, 255, .35);
-// 		}
-// 		
-// 		&:active {
-// 			background-color: rgba(255, 255, 255, .15);
-// 		}
-// 	}
-// 
-// 	@supports (backdrop-filter: blur(20px)) {
-// 		background-color: rgba(255, 255, 255, .25);
-// 		backdrop-filter: blur(20px);
-// 		
-// 		&:hover,
-// 		&:focus {
-// 			background-color: rgba(255, 255, 255, .35);
-// 		}
-// 		
-// 		&:active {
-// 			background-color: rgba(255, 255, 255, .15);
-// 		}
-// 	}
-	
 }
 
 body {
@@ -198,19 +170,19 @@ body {
 			display: none !important;
 		}
 
-		// .meta {
-		// 	display: flex;
-		// 	position: absolute;
-		// 	right: 4px;
-		// 	bottom: 12px;
-		// 	color: #fff;
-		// 	text-shadow: #000 0 1px 1px, #000 0 2px 4px;
-		// 	opacity: .5;
-		//
-		// 	li {
-		// 		margin-right: 12px;
-		// 	}
-		// }
+		.meta {
+			display: flex;
+			position: absolute;
+			right: 4px;
+			bottom: 12px;
+			color: #fff;
+			text-shadow: #000 0 1px 1px, #000 0 2px 4px;
+			opacity: .5;
+		
+			li {
+				margin-right: 12px;
+			}
+		}
 
 		&:target {
 			position: fixed;
@@ -252,9 +224,9 @@ body {
 				background-position: center;
 			}
 
-			// .meta {
-			// 	display: none !important;
-			// }
+			.meta {
+				display: none !important;
+			}
 
 			.previous,
 			.next {
@@ -272,20 +244,29 @@ body {
 	flex-wrap: wrap;
 	
 	li {
-		margin-left: 12px;
+		margin-left: 8px;
 		
 		a {
 			@include button;
 		}
 		
-		&.info {
+		&.github {
 			a {
-				background-image: url(../img/icon-info.svg);
+				background-image: url(../img/icon-github.svg);
 			}
 		}
 		
 		&.twitter {
 			a {
+				text-indent: 0;
+				width: auto;
+				font-size: 13px;
+				line-height: 32px;
+				text-transform: uppercase;
+				padding: 0 12px 0 28px;
+				color: rgba(0, 0, 0, .75);
+				font-weight: 600;
+				text-decoration: none;
 				background-image: url(../img/icon-twitter.svg);
 			}
 		}
@@ -315,7 +296,6 @@ body {
 		.item {
 			height: auto;
 			width: 100%;
-			max-height: 90vh;
 
 			img {
 				width: 100%;
@@ -330,13 +310,14 @@ body {
 				span {
 					display: none;
 				}
-				
-				&:hover,
-				&:focus {
-					span {
-						display: block;
-					}
-				}
+			}
+			
+			.previous {
+				cursor: w-resize;
+			}
+			
+			.next {
+				cursor: e-resize;
 			}
 		}
 	}

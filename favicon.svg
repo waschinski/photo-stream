@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch Beta 64 (93301) - https://sketch.com -->
+    <title>favicon</title>
+    <desc>Created with Sketch Beta.</desc>
     <g id="favicon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <rect id="Rectangle" fill="#FFB485" x="0" y="0" width="5" height="7" rx="1"></rect>
-        <rect id="Rectangle-Copy-2" fill="#AAA7D8" x="0" y="9" width="9" height="7" rx="1"></rect>
-        <rect id="Rectangle-Copy" fill="#FEB4D1" x="7" y="0" width="9" height="7" rx="1"></rect>
-        <rect id="Rectangle-Copy-3" fill="#9BDACA" x="11" y="9" width="5" height="7" rx="1"></rect>
+        <g id="Group-3">
+            <path d="M1.5,0 L2.5,0 C2.77614237,-5.07265313e-17 3,0.223857625 3,0.5 L3,3.5 C3,3.77614237 2.77614237,4 2.5,4 L0.5,4 C0.223857625,4 3.38176876e-17,3.77614237 0,3.5 L0,1.5 C-1.01453063e-16,0.671572875 0.671572875,1.52179594e-16 1.5,0 Z" id="Rectangle" fill="#9AE5D2"></path>
+            <rect id="Rectangle-Copy-9" fill="#93D2FF" x="8" y="12" width="3" height="4"></rect>
+            <path d="M13.5,12 L15.5,12 C15.7761424,12 16,12.2238576 16,12.5 L16,14.5 C16,15.3284271 15.3284271,16 14.5,16 L13.5,16 C13.2238576,16 13,15.7761424 13,15.5 L13,12.5 C13,12.2238576 13.2238576,12 13.5,12 Z" id="Rectangle-Copy-10" fill="#FF7C7C"></path>
+            <path d="M13.5,0 L14.5,0 C15.3284271,-1.52179594e-16 16,0.671572875 16,1.5 L16,3.5 C16,3.77614237 15.7761424,4 15.5,4 L13.5,4 C13.2238576,4 13,3.77614237 13,3.5 L13,0.5 C13,0.223857625 13.2238576,5.07265313e-17 13.5,0 Z" id="Rectangle-Copy-5" fill="#659BFF"></path>
+            <rect id="Rectangle-Copy" fill="#FF80D9" x="5" y="0" width="6" height="4"></rect>
+            <rect id="Rectangle-Copy-6" fill="#B3AFFF" x="0" y="6" width="7" height="4"></rect>
+            <path d="M0.5,12 L5.5,12 C5.77614237,12 6,12.2238576 6,12.5 L6,15.5 C6,15.7761424 5.77614237,16 5.5,16 L2,16 C0.8954305,16 1.3527075e-16,15.1045695 0,14 L0,12.5 C-3.38176876e-17,12.2238576 0.223857625,12 0.5,12 Z" id="Rectangle-Copy-8" fill="#FBF3AD"></path>
+            <rect id="Rectangle-Copy-7" fill="#FFAE7B" x="9" y="6" width="7" height="4"></rect>
+        </g>
     </g>
 </svg>
