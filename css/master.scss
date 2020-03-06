@@ -25,7 +25,7 @@
 	height: 32px;
 	background-repeat: no-repeat;
 	background-position: 8px;
-	background-color: rgba(255, 255, 255, .25);
+	background-color: rgba(200, 200, 200, .25);
 	transition: background-color .1s linear;
 	-webkit-backdrop-filter: blur(20px);
 	-moz-backdrop-filter: blur(20px);
@@ -33,11 +33,11 @@
 	
 	&:hover,
 	&:focus {
-		background-color: rgba(255, 255, 255, .5);
+		background-color: rgba(200, 200, 200, .5);
 	}
 	
 	&:active {
-		background-color: rgba(255, 255, 255, .25);
+		background-color: rgba(200, 200, 200, .25);
 	}
 }
 
@@ -145,13 +145,13 @@ body {
 			&:hover,
 			&:focus {
 				span {
-					background-color: rgba(255, 255, 255, .5);
+					background-color: rgba(200, 200, 200, .5);
 				}
 			}
 
 			&:active {
 				span {
-					background-color: rgba(255, 255, 255, .25);
+					background-color: rgba(200, 200, 200, .25);
 				}
 			}
 		}
