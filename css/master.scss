@@ -32,25 +32,25 @@
 	backdrop-filter: blur(20px);
 	background-color: rgba(200, 200, 200, .25);
 	
-	@include dark {
-		background-color: rgba(0, 0, 0, .25);
-	}
+	// @include dark {
+	// 	background-color: rgba(0, 0, 0, .25);
+	// }
 	
 	&:hover,
 	&:focus {
 		background-color: rgba(200, 200, 200, .5);
 		
-		@include dark {
-			background-color: rgba(0, 0, 0, .5);
-		}
+		// @include dark {
+		// 	background-color: rgba(0, 0, 0, .5);
+		// }
 	}
 	
 	&:active {
 		background-color: rgba(200, 200, 200, .25);
 		
-		@include dark {
-			background-color: rgba(0, 0, 0, .75);
-		}
+		// @include dark {
+		// 	background-color: rgba(0, 0, 0, .75);
+		// }
 	}
 	
 	
@@ -163,9 +163,9 @@ body {
 				span {
 					background-color: rgba(200, 200, 200, .5);
 					
-					@include dark {
-						background-color: rgba(0, 0, 0, .5);
-					}
+					// @include dark {
+					// 	background-color: rgba(0, 0, 0, .5);
+					// }
 				}
 			}
 
@@ -173,9 +173,9 @@ body {
 				span {
 					background-color: rgba(200, 200, 200, .25);
 					
-					@include dark {
-						background-color: rgba(0, 0, 0, .75);
-					}
+					// @include dark {
+					// 	background-color: rgba(0, 0, 0, .75);
+					// }
 				}
 			}
 		}
@@ -297,9 +297,9 @@ body {
 				text-decoration: none;
 				background-image: url(../img/icon-twitter.svg);
 				
-				@include dark {
-					color: #fff;
-				}
+				// @include dark {
+				// 	color: #fff;
+				// }
 			}
 		}
 	}
