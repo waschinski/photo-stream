@@ -1,6 +1,7 @@
 # Photo Stream
 
 ## What?
+### Features
 ## Why?
 ## Article
 ## Jekyll
