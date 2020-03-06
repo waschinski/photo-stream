@@ -3,11 +3,11 @@
   const RIGHT = 39;
   const LEFT = 37;
 
-  const findButton = (buttonClass) => {
+  const clickButton = (buttonClass) => {
     const id = window.location.hash && window.location.hash.replace(".", "\\.");
     const selector = `li${id} ${buttonClass}`;
     const button = document.querySelector(selector);
-    return button;
+    button && button.click();
   }
 
   const navigate = (event, buttonClass, property) => {
@@ -27,11 +27,9 @@
       window.location = '#home';
       console.log('Going #home');
     } else if (event.keyCode === RIGHT) {
-      const button = findButton('.next');
-      button && button.click();
+      clickButton('.next');
     } else if (event.keyCode === LEFT) {
-      const button = findButton('.previous');
-      button && button.click();
+      clickButton('.previous');
     }
   });
 
