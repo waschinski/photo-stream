@@ -3,19 +3,18 @@
 
 <!doctype html>
 <html>
-  {% include head.html %}
-  <body>
-    <ul class="grid">
-			{% for image in site.static_files reversed %}
-				{% if image.path contains 'original' %}
-					{% include photo.html %}
-				{% endif %}
-			{% endfor %}
-		</ul>
-		<ul class="links">
-			<li class="github"><a rel="me" href="https://github.com/maxvoltar/maxvoltar-photo" title="Fork on Github">Github</a></li>
-			<li class="twitter"><a rel="me" href="https://twitter.com/maxvoltar" title="@maxvoltar on Twitter">maxvoltar</a></li>
-		</ul>
+{% include head.html %}
+<body>
+	<ul class="grid">
+		{% assign images = site.static_files | photo_filter %}
+		{% for image in images %}
+			{% include photo.html %}
+		{% endfor %}
+	</ul>
+	<ul class="links">
+		<li class="github"><a rel="me" href="https://github.com/maxvoltar/maxvoltar-photo" title="Fork on Github">Github</a></li>
+		<li class="twitter"><a rel="me" href="https://twitter.com/maxvoltar" title="@maxvoltar on Twitter">maxvoltar</a></li>
+	</ul>
 	{% include javascript.html %}
-  </body>
+</body>
 </html>

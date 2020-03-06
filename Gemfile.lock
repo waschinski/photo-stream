@@ -90,6 +90,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  exifr
   jekyll (~> 4.0.0)
   jekyll-exif-data (~> 0.0)
   jekyll-feed (~> 0.12)
