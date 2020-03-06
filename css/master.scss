@@ -140,6 +140,7 @@ body {
 			span {
 				@include button;
 				background-image: url(../img/icon-left.svg);
+				pointer-events: none;
 			}
 			
 			&:hover,

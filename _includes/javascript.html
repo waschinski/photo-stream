@@ -1,28 +1,44 @@
 <script>
-	const ESCAPE = 27;
-	document.addEventListener("keydown", (event) => {
-	  if (event.keyCode === ESCAPE) {
-			window.location = '#home';
-			console.log('Going #home');
-	  }
-	});
-	const handleNextClick = (event) => {
-	  const next = event.target.closest("li").nextElementSibling;
-		window.location = '#' + next.getAttribute('id');
-		console.log('OHAI #' +  next.getAttribute('id'));
-	  event.preventDefault();
-	};
-	const handlePreviousClick = (event) => {
-	  const next = event.target.closest("li").previousElementSibling;
-		window.location = '#' + next.getAttribute('id');
-		console.log(`Going back to #${next.getAttribute('id')}`);
-	  event.preventDefault();
-	};
-	Array.from(document.querySelectorAll(".next")).forEach((element) => {
-	  element.addEventListener("click", handleNextClick);
-	});
-	Array.from(document.querySelectorAll(".previous")).forEach((element) => {
-	  element.addEventListener("click", handlePreviousClick);
-	});
-	lazyload();
+  const ESCAPE = 27;
+  const RIGHT = 39;
+  const LEFT = 37;
+
+  const findButton = (buttonClass) => {
+    const id = window.location.hash && window.location.hash.replace(".", "\\.");
+    const selector = `li${id} ${buttonClass}`;
+    const button = document.querySelector(selector);
+    return button;
+  }
+
+  const navigate = (event, buttonClass, property) => {
+    if (event.target.matches(buttonClass)) {
+      const button = event.target.closest("li")[property];
+      if (button) {
+        const id = `#${button.getAttribute('id')}`;
+        window.location = id;
+        console.log(`Going to ${buttonClass}: ${id}`);
+      }
+      event.preventDefault();
+    }
+  }
+
+  document.addEventListener("keydown", (event) => {
+    if (event.keyCode === ESCAPE) {
+      window.location = '#home';
+      console.log('Going #home');
+    } else if (event.keyCode === RIGHT) {
+      const button = findButton('.next');
+      button && button.click();
+    } else if (event.keyCode === LEFT) {
+      const button = findButton('.previous');
+      button && button.click();
+    }
+  });
+
+  document.addEventListener('click', (event) => {
+    navigate(event, '.next', 'nextElementSibling');
+    navigate(event, '.previous', 'previousElementSibling');
+  });
+
+  lazyload();
 </script>
