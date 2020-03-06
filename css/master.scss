@@ -25,20 +25,35 @@
 	height: 32px;
 	background-repeat: no-repeat;
 	background-position: 8px;
-	background-color: rgba(200, 200, 200, .25);
+	background-size: 16px;
 	transition: background-color .1s linear;
 	-webkit-backdrop-filter: blur(20px);
 	-moz-backdrop-filter: blur(20px);
 	backdrop-filter: blur(20px);
+	background-color: rgba(200, 200, 200, .25);
+	
+	@include dark {
+		background-color: rgba(0, 0, 0, .25);
+	}
 	
 	&:hover,
 	&:focus {
 		background-color: rgba(200, 200, 200, .5);
+		
+		@include dark {
+			background-color: rgba(0, 0, 0, .5);
+		}
 	}
 	
 	&:active {
 		background-color: rgba(200, 200, 200, .25);
+		
+		@include dark {
+			background-color: rgba(0, 0, 0, .75);
+		}
 	}
+	
+	
 }
 
 body {
@@ -146,12 +161,20 @@ body {
 			&:focus {
 				span {
 					background-color: rgba(200, 200, 200, .5);
+					
+					@include dark {
+						background-color: rgba(0, 0, 0, .5);
+					}
 				}
 			}
 
 			&:active {
 				span {
 					background-color: rgba(200, 200, 200, .25);
+					
+					@include dark {
+						background-color: rgba(0, 0, 0, .75);
+					}
 				}
 			}
 		}
@@ -272,6 +295,10 @@ body {
 				font-weight: 600;
 				text-decoration: none;
 				background-image: url(../img/icon-twitter.svg);
+				
+				@include dark {
+					color: #fff;
+				}
 			}
 		}
 	}
