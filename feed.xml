@@ -36,7 +36,7 @@
 				<updated>{{ image_path | exif: 'date_time'}}</updated>
 				<id>{{ image.name }}</id>
 				<content type="html" xml:base="{{ site.url }}/#{{ image.name }}">
-					<figure><a href="{{ site.url }}/#{{ image.name }}"><img src="{{ site.url }}/photos/large/{{ image.name }}" /></a></figure>
+					<![CDATA[<figure><a href="{{ site.url }}/#{{ image.name }}"><img src="{{ site.url }}/photos/large/{{ image.name }}" alt="#{{ image.name }}" /></a></figure>]]>
 				</content>
 				{% if site.author %}
 					<author>
