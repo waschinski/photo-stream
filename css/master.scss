@@ -234,6 +234,7 @@ body {
 
 			img {
 				object-fit: contain;
+				animation: fade-in .5s ease-out;
 			}
 
 			.full {
@@ -243,6 +244,7 @@ body {
 				right: 0;
 				bottom: 0;
 				left: 0;
+				animation: fade-in .5s ease-out;
 				
 				span {
 					flex-grow: 1;
@@ -353,4 +355,13 @@ body {
 			}
 		}
 	}
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
