@@ -4,3 +4,4 @@ _site
 .jekyll-metadata
 .nova
 vendor
+photos/original/.DS_Store
