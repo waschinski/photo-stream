@@ -1,3 +1,5 @@
+![Photo Stream Social Preview](https://repository-images.githubusercontent.com/244708193/8710f480-6010-11ea-9fd6-41bdaea7ab02)
+
 # Photo Stream
 
 ## What?
