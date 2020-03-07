@@ -32,7 +32,7 @@
 			<entry>
 				<title type="html">{{ image.name }}</title>
 				<link href="{{ site.url }}/#{{ image.name }}" rel="alternate" type="text/html" title="{{ image.name }}" />
-				<published>{{ image_path | exif: 'date_time'}}</published>
+				<published>{{ site.time }}</published>
 				<updated>{{ image_path | exif: 'date_time'}}</updated>
 				<id>{{ image.name }}</id>
 				<content type="html" xml:base="{{ site.url }}/#{{ image.name }}">
