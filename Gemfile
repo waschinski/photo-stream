@@ -15,7 +15,7 @@ gem "minima", "~> 2.5"
 # gem "github-pages", group: :jekyll_plugins
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.12"
+  # gem "jekyll-feed", "~> 0.12"
   gem "jekyll_image_processing", git: "https://github.com/benubois/jekyll_image_processing"
   gem 'exifr'
   gem 'jekyll-exif-data', '~> 0.0'

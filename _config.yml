@@ -20,6 +20,10 @@
 
 title: maxvoltar.photo
 email: tim@maxvoltar.be
+author:
+  name: Tim Van Damme
+  email: tim@maxvoltar.be #optional
+  website: https://maxvoltar.be
 description: >- # this means to ignore newlines until "baseurl:"
   @maxvoltar's minimalistic photo stream.
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -30,7 +34,7 @@ instagram_username: maxvoltar
 
 # Build settings
 plugins:
-  - jekyll-feed
+  # - jekyll-feed
   - jekyll-exif-data
 
 image_processing:
