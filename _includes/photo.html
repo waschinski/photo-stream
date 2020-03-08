@@ -1,17 +1,43 @@
-{% capture image_path %}photos/original/{{ image.name }}{% endcapture %}
+{% assign slug = image.name | strip_extension | slugify %}
+{% assign safe_name = image.name | uri_escape %}
+{% assign next_index = forloop.index0 | plus: 1 %}
+{% assign previous_index = forloop.index0 | minus: 1 %}
 
-<li class="item" id="{{ image.name }}" style="background-image: url('{{ site.baseurl }}photos/tint/{{ image.name }}')">
-	<img class="lazyload" data-src="{{ site.baseurl }}photos/thumbnail/{{ image.name }}" src="{{ site.baseurl }}photos/tint/{{ image.name }}" height="{{ image_path | exif: 'height'}}" width="{{ image_path | exif: 'width'}}" />
+{% capture image_path %}photos/original/{{ image.name }}{% endcapture %}
+{% capture href %}/{{ slug }}/{% endcapture %}
+
+{% if page.url == href %}
+    {% assign target = "target" %}
+{% else %}
+    {% assign target = "" %}
+{% endif %}
+
+<li class="item {{ target }}" id="{{ slug }}" style="background-image: url('{{ safe_name | processed_path: 'tint' }}')" title="{{ image.name | strip_extension }}">
+
+	<img class="lazyload" data-src="{{ safe_name | processed_path: 'thumbnail' }}" src="{{ safe_name | processed_path: 'tint' }}" height="{{ image_path | exif: 'height'}}" width="{{ image_path | exif: 'width'}}" />
 	<span class="full">
-		<span style="background-image: url('{{ site.baseurl }}photos/large/{{ image.name }}')"></span>
+		<span style="background-image: url('{{ safe_name | processed_path: 'large' }}')"></span>
 	</span>
-	<a class="open" href="#{{ image.name }}">Open</a>
-	<a class="close" href="#home">Close</a>
-	<a class="next" href="#next" title="Go to next photo"><span>Next</span></a>
-	<a class="previous" href="#previous" title="Go to previous photo"><span>Previous</span></a>
-	<!-- <ul class="meta">
-		<li>{{ image_path | exif: 'model'}}</li>
-		<li>{{ image_path | exif: 'exposure_time.to_s'}}</li>
-		<li><span class="aperture"><em>f</em>/</span>{{ image_path | exif: 'f_number.to_f'}}</li>
+	<a class="open" href="{{ href  }}" data-target="{{ slug }}">Open</a>
+	<a class="close" href="/">Close</a>
+
+    {% unless forloop.first %}
+    	{% assign previous_slug = images[previous_index].name | strip_extension | slugify %}
+    	<a href="/{{ previous_slug }}/" data-target="{{ previous_slug }}" class="previous" title="Go to previous photo">
+            <span>Previous</span>
+        </a>
+    {% endunless %}
+
+    {% unless forloop.last %}
+    	{% assign next_slug = images[next_index].name | strip_extension | slugify %}
+        <a href="/{{ next_slug }}/" data-target="{{ next_slug }}" class="next" title="Go to next photo">
+            <span>Next</span>
+        </a>
+    {% endunless %}
+
+    <!-- <ul class="meta">
+    <li>{{ image_path | exif: 'model'}}</li>
+    <li>{{ image_path | exif: 'exposure_time.to_s'}}</li>
+    <li><span class="aperture"><em>f</em>/</span>{{ image_path | exif: 'f_number.to_f'}}</li>
 	</ul> -->
 </li>
