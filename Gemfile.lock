@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/benubois/jekyll_image_processing
-  revision: b76c215c135d5e2689c0adfbd619b278d0973209
+  revision: 3c3dab7e979c29585361ce6b4e04ca91a404e058
   specs:
     jekyll_image_processing (0.1.0)
       image_processing (>= 1.10.3)
@@ -20,6 +20,8 @@ GEM
     exifr (1.3.6)
     ffi (1.12.2)
     forwardable-extended (2.6.0)
+    htmlbeautifier (1.3.1)
+    htmlcompressor (0.4.0)
     http_parser.rb (0.6.0)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
@@ -49,6 +51,10 @@ GEM
       sassc (> 2.0.1, < 3.0)
     jekyll-seo-tag (2.6.1)
       jekyll (>= 3.3, < 5.0)
+    jekyll-tidy (0.2.2)
+      htmlbeautifier
+      htmlcompressor
+      jekyll
     jekyll-watch (2.2.1)
       listen (~> 3.0)
     kramdown (2.1.0)
@@ -93,7 +99,7 @@ DEPENDENCIES
   exifr
   jekyll (~> 4.0.0)
   jekyll-exif-data (~> 0.0)
-  jekyll-feed (~> 0.12)
+  jekyll-tidy
   jekyll_image_processing!
   minima (~> 2.5)
   tzinfo (~> 1.2)
