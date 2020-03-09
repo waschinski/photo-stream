@@ -4,13 +4,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 	<generator uri="https://github.com/maxvoltar/maxvoltar-photo">Photo Stream by @maxvoltar</generator>
-	<link href="{{ site.url }}" rel="self" type="application/atom+xml" />
+	<link href="{{ site.url }}/feed.xml" rel="self" type="application/atom+xml" />
 	<link href="{{ site.url }}" rel="alternate" type="text/html"/>
 	<updated>{{ site.time }}</updated>
 	<id>{{ site.url }}</id>
 	<title type="html">{{ site.title}}</title>
 	<subtitle>{{ site.description }}</subtitle>
-
 
 	{% if site.author %}
 		<author>
@@ -25,34 +24,34 @@
 			{% endif %}
 		</author>
 	{% endif %}
-	
+
 	{% assign images = site.static_files | photo_filter %}
-		{% for image in images limit: 20 %}
-			{% capture image_path %}photos/original/{{ image.name }}{% endcapture %}
-			<entry>
-				<title type="html">{{ image.name }}</title>
-				<link href="{{ site.url }}/#{{ image.name }}" rel="alternate" type="text/html" title="{{ image.name }}" />
-				<published>{{ site.time }}</published>
-				<updated>{{ image_path | exif: 'date_time'}}</updated>
-				<id>{{ image.name }}</id>
-				<content type="html" xml:base="{{ site.url }}/#{{ image.name }}">
-					<![CDATA[<figure><a href="{{ site.url }}/#{{ image.name }}"><img src="{{ site.url }}/photos/large/{{ image.name }}" alt="#{{ image.name }}" /></a></figure>]]>
-				</content>
-				{% if site.author %}
-					<author>
-						{% if site.author.name %}
-							<name>{{ site.author.name }}</name>
-						{% endif %}
-						{% if site.author.email %}
-							<email>{{ site.author.email }}</email>
-						{% endif %}
-						{% if site.author.website %}
-							<uri>{{ site.author.website }}</uri>
-						{% endif %}
-					</author>
-				{% endif %}
-				<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="{{ site.url }}/photos/large/{{ image.name }}" />
-				<media:content medium="image" url="{{ site.url }}/photos/large/{{ image.name }}" xmlns:media="http://search.yahoo.com/mrss/" />
-			</entry>
-		{% endfor %}
+	{% for image in images limit: 20 %}
+		{% capture image_path %}photos/original/{{ image.name }}{% endcapture %}
+		<entry>
+			<title type="html">{{ image.name | strip_extension }}</title>
+			<link href="{{ site.url }}/{{ image.name | strip_extension | slugify }}/" rel="alternate" type="text/html" title="{{ image.name | strip_extension }}" />
+			<published>{{ site.time }}</published>
+			<updated>{{ image_path | exif: 'date_time'}}</updated>
+			<id>{{ image.name }}</id>
+			<content type="html">
+				<![CDATA[<figure><a href="{{ site.url }}/{{ image.name | strip_extension | slugify }}/"><img src="{{ site.url }}{{ image.name | uri_escape | processed_path: 'large' }}" alt="{{ image.name | strip_extension }}" /></a></figure>]]>
+			</content>
+			{% if site.author %}
+				<author>
+					{% if site.author.name %}
+						<name>{{ site.author.name }}</name>
+					{% endif %}
+					{% if site.author.email %}
+						<email>{{ site.author.email }}</email>
+					{% endif %}
+					{% if site.author.website %}
+						<uri>{{ site.author.website }}</uri>
+					{% endif %}
+				</author>
+			{% endif %}
+			<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="{{ site.url }}{{ image.name | uri_escape | processed_path: 'large' }}" />
+			<media:content medium="image" url="{{ site.url }}{{ image.name | uri_escape | processed_path: 'large' }}" xmlns:media="http://search.yahoo.com/mrss/" />
+		</entry>
+	{% endfor %}
 </feed>

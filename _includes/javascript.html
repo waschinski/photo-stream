@@ -2,40 +2,79 @@
   const ESCAPE = 27;
   const RIGHT = 39;
   const LEFT = 37;
+  const TARGET_CLASS = 'target';
 
-  const clickButton = (buttonClass) => {
-    const id = window.location.hash && window.location.hash.replace(".", "\\.");
-    const selector = `li${id} ${buttonClass}`;
-    const button = document.querySelector(selector);
-    button && button.click();
+  const clickNavigationButton = (buttonClass) => {
+    const id = window.history.state && window.history.state.id;
+    if (id) {
+      const selector = `#${id} ${buttonClass}`;
+      const button = document.querySelector(selector);
+      button && button.click();
+    }
   }
 
-  const navigate = (event, buttonClass, property) => {
-    if (event.target.matches(buttonClass)) {
-      const button = event.target.closest("li")[property];
-      if (button) {
-        const id = `#${button.getAttribute('id')}`;
-        window.location = id;
-        console.log(`Going to ${buttonClass}: ${id}`);
-      }
+  const openPhoto = (id, pushState) => {
+    const photo = document.querySelector(`#${id}`);
+    const title = photo.getAttribute('title');
+    const href = `/${id}/`;
+    removeTargetClass();
+    photo.classList.add(TARGET_CLASS);
+    document.title = title;
+    if (pushState) {
+      window.history.pushState({id: id}, '', href);
+    }
+  }
+
+  const closePhoto = (pushState) => {
+    const title = document.querySelector('head title').getAttribute('data-title');
+    removeTargetClass();
+    document.title = title;
+    if (pushState) {
+      window.history.pushState({}, '', '/');
+    }
+  }
+
+  const removeTargetClass = () => {
+    let targets = document.querySelectorAll(`.${TARGET_CLASS}`);
+    targets.forEach((target) => {
+      target.classList.remove(TARGET_CLASS);
+    });
+  }
+
+  const handleClick = (selector, event, callback) => {
+    if (event.target.matches(selector)) {
+      callback();
       event.preventDefault();
     }
   }
 
-  document.addEventListener("keydown", (event) => {
+  window.onpopstate = function(event) {
+    if (event.state && event.state.id) {
+      const id = event.state.id;
+      openPhoto(id, false);
+    } else {
+      closePhoto(false);
+    }
+  }
+
+  document.addEventListener('keydown', (event) => {
     if (event.keyCode === ESCAPE) {
-      window.location = '#home';
-      console.log('Going #home');
+      closePhoto(true);
     } else if (event.keyCode === RIGHT) {
-      clickButton('.next');
+      clickNavigationButton('.next');
     } else if (event.keyCode === LEFT) {
-      clickButton('.previous');
+      clickNavigationButton('.previous');
     }
   });
 
   document.addEventListener('click', (event) => {
-    navigate(event, '.next', 'nextElementSibling');
-    navigate(event, '.previous', 'previousElementSibling');
+    handleClick('[data-target]', event, () => {
+      const id = event.target.getAttribute('data-target');
+      openPhoto(id, true);
+    });
+    handleClick('.close', event, () => {
+      closePhoto(true);
+    });
   });
 
   lazyload();
