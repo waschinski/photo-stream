@@ -1,20 +1,20 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-	<title>{{ site.title }}</title>
+	<title data-title="{{ site.title }}">{{ page.title | default: site.title }}</title>
 	<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{ site.url }}/feed.xml">
-	<meta property="og:title" content="{{ site.title }}">
+	<meta property="og:title" content="{{ page.title | default: site.title }}">
 	<meta property="og:type" content="website">
-	<meta property="og:url" content="{{ site.url }}">
-	<meta property="og:image" content="{% assign images = site.static_files | photo_filter %}{% for image in images limit: 1 %}{{ site.url }}/photos/large/{{ image.name }}{% endfor %}">
+	<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+	<meta property="og:image" content="{{ site.url }}{{ page.image | uri_escape | processed_path: 'large' }}">
 	<meta property="og:site_name" content="{{ site.title }}">
 	<meta property="og:description" content="{{ site.description }}">
-	<meta name="thumbnail" content="{% assign images = site.static_files | photo_filter %}{% for image in images limit: 1 %}{{ site.url }}/photos/large/{{ image.name }}{% endfor %}">
+	<meta name="thumbnail" content="{{ site.url }}{{ page.image | uri_escape | processed_path: 'large' }}">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="{{ site.twitter_username }}">
-	<meta name="twitter:title" content="{{ site.title }}">
+	<meta name="twitter:title" content="{{ page.title | default: site.title }}">
 	<meta name="twitter:description" content="{{ site.description }}">
-	<meta name="twitter:image:src" content="{% assign images = site.static_files | photo_filter %}{% for image in images limit: 1 %}{{ site.url }}/photos/large/{{ image.name }}{% endfor %}">
+	<meta name="twitter:image:src" content="{{ site.url }}{{ page.image | uri_escape | processed_path: 'large' }}">
 	<meta name="description" content="{{ site.description }}">
 	<script type="text/javascript" src="/js/lazy-loading.js"></script>
 	<link rel="stylesheet" type="text/css" media="screen" href="/css/master.css" />

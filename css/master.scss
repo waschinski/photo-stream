@@ -189,11 +189,6 @@ body {
 			}
 		}
 
-		&:first-child .previous,
-		&:last-child .next {
-			display: none !important;
-		}
-
 		.meta {
 			display: flex;
 			position: absolute;
@@ -208,7 +203,7 @@ body {
 			}
 		}
 
-		&:target {
+		&.target {
 			position: fixed;
 			top: 0;
 			right: 0;
