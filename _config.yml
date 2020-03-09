@@ -42,14 +42,20 @@ image_processing:
     source: photos/original
     destination: photos/large
     resize_to_limit: [2048, 2048]
+    saver:
+      strip: true
   thumbnail:
     source: photos/original
     destination: photos/thumbnail
     resize_to_limit: [640, 640]
+    saver:
+      strip: true
   tint:
     source: photos/original
     destination: photos/tint
     resize_to_fill: [1,1]
+    saver:
+      strip: true
 
 # exiftag:
 #  sources:
