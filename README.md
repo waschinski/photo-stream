@@ -2,15 +2,33 @@
 
 # Photo Stream
 
-Photo stream is a simpler home for your photos by @maxvoltar and friends. Easy to use, self hosted, no tracking, just photos.
+Photo stream is a simpler home for your photos by [@maxvoltar](https://twitter.com/maxvoltar) and [friends](#credits). Easy to use, self hosted, no tracking, just photos.
 
-### Features
+## Features
+
+- Lazy loading
+- Only load larger resolutions when needed (to save on bandwidth)
+- Photo tints
+- Keyboard shortcuts
+- Unique URL's for photos
+- RSS feed (Which you can plug into [IFTTT](https://ifttt.com) and set up auto-posting to most social networks, like I've done [here](https://twitter.com/maxvoltar_photo). Make sure you select "Post a tweet with image" when setting it up to embed the photo.)
+- Drag, drop, commit workflow ([learn more about how to add photos to your stream](https://github.com/maxvoltar/photo-stream#how-to-use))
+- Optional: Links to your social networks
+
 ## Why?
-## Article
-## Jekyll
+
+We like to take photos and share them. Problem is it's hard to really own your photos and how they're represented across social media these days, so we set out to make a place for them. You host it yourself, wherever you want (Netlify, Github Pages...), you're in control.
+
 ## How to install
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/maxvoltar/photo-stream)
+### The easy way
+
+1. Fork this repo
+2. Clear the `photos/originals` directory
+3. Add your own photos
+4. Deploy your forked copy to [Netlify](https://netlify.com) (free by default, you can add your own domain and analytics for a reasonable price)
+
+### The slightly-less-easy-but-still-totally-doable way
 
 You'll need a working version of Ruby.
 _Add instructions about installing rbenv_
@@ -38,4 +56,13 @@ bundle exec jekyll serve
 ```
 
 ## Credits
-## ...
+
+- [@maxvoltar](https://github.com/maxvoltar)
+- [@benubois](https://github.com/benubois)
+- [@mattsacks](https://github.com/mattsacks)
+- [@pjaspers](https://github.com/pjaspers)
+
+## Examples
+
+- https://maxvoltar.photo
+- ...
