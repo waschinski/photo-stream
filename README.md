@@ -2,12 +2,15 @@
 
 # Photo Stream
 
-## What?
+Photo stream is a simpler home for your photos by @maxvoltar and friends. Easy to use, self hosted, no tracking, just photos.
+
 ### Features
 ## Why?
 ## Article
 ## Jekyll
 ## How to install
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/maxvoltar/photo-stream)
 
 You'll need a working version of Ruby.
 _Add instructions about installing rbenv_
