@@ -4,9 +4,8 @@
 {% assign previous_index = forloop.index0 | minus: 1 %}
 
 {% capture image_path %}photos/original/{{ image.name }}{% endcapture %}
-{% capture href %}/{{ slug }}/{% endcapture %}
 
-{% if page.url == href %}
+{% if slug == page.image_slug %}
     {% assign target = "target" %}
 {% else %}
     {% assign target = "" %}
@@ -18,19 +17,19 @@
 	<span class="full">
 		<span style="background-image: url('{{ safe_name | processed_path: 'large' }}')"></span>
 	</span>
-	<a class="open" href="{{ href  }}" data-target="{{ slug }}">Open</a>
-	<a class="close" href="/">Close</a>
+	<a class="open" href="{{ slug | relative_url  }}" data-target="{{ slug }}">Open</a>
+	<a class="close" href="{{ '/' | relative_url }}">Close</a>
 
     {% unless forloop.first %}
     	{% assign previous_slug = images[previous_index].name | strip_extension | slugify %}
-    	<a href="/{{ previous_slug }}/" data-target="{{ previous_slug }}" class="previous" title="Go to previous photo">
+    	<a href="{{ previous_slug | relative_url }}" data-target="{{ previous_slug }}" class="previous" title="Go to previous photo">
             <span>Previous</span>
         </a>
     {% endunless %}
 
     {% unless forloop.last %}
     	{% assign next_slug = images[next_index].name | strip_extension | slugify %}
-        <a href="/{{ next_slug }}/" data-target="{{ next_slug }}" class="next" title="Go to next photo">
+        <a href="{{ next_slug | relative_url }}" data-target="{{ next_slug }}" class="next" title="Go to next photo">
             <span>Next</span>
         </a>
     {% endunless %}
