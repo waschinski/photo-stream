@@ -33,6 +33,7 @@ We like to take photos and share them. Problem is it's hard to really own your p
 ### The slightly-less-easy-but-still-totally-doable way
 
 You'll need a working version of Ruby.
+
 _Add instructions about installing rbenv_
 
 ```sh

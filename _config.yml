@@ -34,7 +34,6 @@ instagram_username: maxvoltar
 
 # Build settings
 plugins:
-  # - jekyll-feed
   - jekyll-exif-data
 
 image_processing:
@@ -56,10 +55,6 @@ image_processing:
     resize_to_fill: [1,1]
     saver:
       strip: true
-
-# exiftag:
-#  sources:
-#    - photos/original
 
 # Exclude from processing.
 # The following items will not be processed, by default.
