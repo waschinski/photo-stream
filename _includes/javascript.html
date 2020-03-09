@@ -13,24 +13,23 @@
     }
   }
 
-  const openPhoto = (id, pushState) => {
+  const openPhoto = (id, href) => {
     const photo = document.querySelector(`#${id}`);
     const title = photo.getAttribute('title');
-    const href = `/${id}/`;
     removeTargetClass();
     photo.classList.add(TARGET_CLASS);
     document.title = title;
-    if (pushState) {
+    if (href) {
       window.history.pushState({id: id}, '', href);
     }
   }
 
-  const closePhoto = (pushState) => {
+  const closePhoto = (href) => {
     const title = document.querySelector('head title').getAttribute('data-title');
     removeTargetClass();
     document.title = title;
-    if (pushState) {
-      window.history.pushState({}, '', '/');
+    if (href) {
+      window.history.pushState({}, '', href);
     }
   }
 
@@ -48,32 +47,46 @@
     }
   }
 
+  const handleKey = (keyCode, event, callback) => {
+    if (event.keyCode === keyCode) {
+      callback();
+      event.preventDefault();
+    }
+  }
+
   window.onpopstate = function(event) {
     if (event.state && event.state.id) {
       const id = event.state.id;
-      openPhoto(id, false);
+      openPhoto(id, null);
     } else {
-      closePhoto(false);
+      closePhoto(null);
     }
   }
 
   document.addEventListener('keydown', (event) => {
-    if (event.keyCode === ESCAPE) {
-      closePhoto(true);
-    } else if (event.keyCode === RIGHT) {
+    handleKey(ESCAPE, event, () => {
+      clickNavigationButton('.close');
+    });
+
+    handleKey(RIGHT, event, () => {
       clickNavigationButton('.next');
-    } else if (event.keyCode === LEFT) {
+    });
+
+    handleKey(LEFT, event, () => {
       clickNavigationButton('.previous');
-    }
+    });
   });
 
   document.addEventListener('click', (event) => {
-    handleClick('[data-target]', event, () => {
+    handleClick('[data-target][href]', event, () => {
       const id = event.target.getAttribute('data-target');
-      openPhoto(id, true);
+      const href = event.target.getAttribute('href');
+      openPhoto(id, href);
     });
-    handleClick('.close', event, () => {
-      closePhoto(true);
+
+    handleClick('[href].close', event, () => {
+      const href = event.target.getAttribute('href');
+      closePhoto(href);
     });
   });
 
