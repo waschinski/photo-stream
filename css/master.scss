@@ -31,7 +31,7 @@
 	-moz-backdrop-filter: blur(20px);
 	backdrop-filter: blur(20px);
 	background-color: rgba(200, 200, 200, .25);
-	
+	// Disable until Safari supports `prefers-color-scheme` in SVG's
 	// @include dark {
 	// 	background-color: rgba(0, 0, 0, .25);
 	// }
@@ -39,7 +39,7 @@
 	&:hover,
 	&:focus {
 		background-color: rgba(200, 200, 200, .5);
-		
+		// Disable until Safari supports `prefers-color-scheme` in SVG's
 		// @include dark {
 		// 	background-color: rgba(0, 0, 0, .5);
 		// }
@@ -47,7 +47,7 @@
 	
 	&:active {
 		background-color: rgba(200, 200, 200, .25);
-		
+		// Disable until Safari supports `prefers-color-scheme` in SVG's
 		// @include dark {
 		// 	background-color: rgba(0, 0, 0, .75);
 		// }
@@ -162,7 +162,7 @@ body {
 			&:focus {
 				span {
 					background-color: rgba(200, 200, 200, .5);
-					
+					// Disable until Safari supports `prefers-color-scheme` in SVG's
 					// @include dark {
 					// 	background-color: rgba(0, 0, 0, .5);
 					// }
@@ -172,7 +172,7 @@ body {
 			&:active {
 				span {
 					background-color: rgba(200, 200, 200, .25);
-					
+					// Disable until Safari supports `prefers-color-scheme` in SVG's
 					// @include dark {
 					// 	background-color: rgba(0, 0, 0, .75);
 					// }
@@ -267,6 +267,7 @@ body {
 	right: 24px;
 	display: flex;
 	flex-wrap: wrap;
+	margin-left: 16px;
 	
 	li {
 		margin-left: 8px;
@@ -281,22 +282,17 @@ body {
 			}
 		}
 		
-		&.twitter {
+		&:not(.github) {
 			a {
 				text-indent: 0;
 				width: auto;
 				font-size: 13px;
 				line-height: 32px;
 				text-transform: uppercase;
-				padding: 0 12px 0 28px;
+				padding: 0 12px;
 				color: rgba(0, 0, 0, .75);
 				font-weight: 600;
 				text-decoration: none;
-				background-image: url(../img/icon-twitter.svg);
-				
-				// @include dark {
-				// 	color: #fff;
-				// }
 			}
 		}
 	}
