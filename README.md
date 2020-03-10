@@ -68,5 +68,5 @@ bundle exec jekyll serve
 ## Examples
 
 - https://maxvoltar.photo
-- http://joeyabanks.photo
+- https://joeyabanks.photo
 - ...
