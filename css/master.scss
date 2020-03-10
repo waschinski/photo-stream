@@ -80,6 +80,7 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	position: relative;
+	align-content: flex-start;
 
 	&:after {
     content: "";
