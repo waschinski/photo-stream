@@ -4,12 +4,11 @@
 <!doctype html>
 <html>
 {% include head.html %}
-	<body>
-		<ul class="grid">
-			{% assign images = site.static_files | photo_filter %}
-			{% for image in images %}
-				{% include photo.html %}
-			{% endfor %}
+<body>
+	{% assign target = "target" %}
+	<ul class="grid" id="{{ target }}">
+		{% assign images = page.images | default: site.static_files | photo_filter %}
+		{% include photos.html %}
 		</ul>
 		<ul class="links">
 			<!-- You can add links (to your social media profiles for example) below -->	
@@ -19,5 +18,8 @@
 			<!-- <li><a rel="me" href="https://instagram.com/{{ site.instagram_username }}" title="@{{ site.instagram_username }} on Instagram">Instagram</a></li> -->
 		</ul>
 		{% include javascript.html %}
-	</body>
+		{% if page.image_slug %}
+			<script src="{{ '/js/photos.js' | relative_url }}" data-photo-id="{{ page.image_slug }}" data-target-id="{{ target }}"></script>
+		{% endif %}
+</body>
 </html>
