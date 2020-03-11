@@ -13,6 +13,7 @@ Photo stream is a simpler home for your photos by [@maxvoltar](https://twitter.c
 - Unique URL's for photos
 - RSS feed (Which you can plug into [IFTTT](https://ifttt.com) and set up auto-posting to most social networks, like I've done [here](https://twitter.com/maxvoltar_photo). Make sure you select "Post a tweet with image" when setting it up to embed the photo.)
 - Drag, drop, commit workflow ([learn more about how to add photos to your stream](https://github.com/maxvoltar/photo-stream#how-to-use))
+- Optimized light and dark themes (auto-enabled depending on your OS preferences)
 - Optional: Links to your social networks
 
 ## Why?
@@ -32,9 +33,9 @@ We like to take photos and share them. Problem is it's hard to really own your p
 
 ### The slightly-less-easy-but-still-totally-doable way
 
-You'll need a working version of Ruby.
+Check to see if you have Ruby installed (`ruby -v`). If you don't, you can follow the installation instructions provided [here](https://www.ruby-lang.org/en/documentation/installation/).
 
-_Add instructions about installing rbenv_
+Next you'll have to install [Jekyll](https://jekyllrb.com) (a simple `gem install bundler jekyll` should suffice).
 
 ```sh
 bundle install
@@ -52,7 +53,8 @@ brew install glib vips
 ```
 
 ## How to use
-Put photos in the `photos/originals` directory.
+
+Put photos in the `photos/originals` directory. Optionally you can give them a name, which will appear as the title of the photo page and in the RSS feed.
 
 ```sh
 bundle exec jekyll serve
@@ -70,3 +72,7 @@ bundle exec jekyll serve
 - https://maxvoltar.photo
 - https://joeyabanks.photo
 - ...
+
+## Known Issues
+
+- You might see a `VIPS-WARNING` message during the generation process. This is [a bug in libvips](https://github.com/libvips/libvips/issues/394#issuecomment-359780578) that's being tracked, but it's harmless.
