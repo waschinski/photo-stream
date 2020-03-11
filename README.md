@@ -46,7 +46,7 @@ We like to take photos and share them. Problem is it's hard to really own your p
 ### The easy way
 
 1. Fork this repo
-2. Clear the `photos/originals` directory
+2. Clear the `photos/original` directory
 3. Add your own photos
 4. Deploy your forked copy to [Netlify](https://netlify.com) (free by default, you can add your own domain and analytics for a reasonable price)
 5. In your build & deploy settings, set "Build command" to `jekyll build` and "Publish directory" to `_site/`.
