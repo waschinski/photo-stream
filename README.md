@@ -11,10 +11,10 @@ Photo stream is a simpler home for your photos by [@maxvoltar](https://twitter.c
     - [The easy way](#the-easy-way)
     - [The slightly-less-easy-but-still-totally-doable way](#the-slightly-less-easy-but-still-totally-doable-way)
 - [How to use](#how-to-use)
-- [Credits](#credits)
 - [Customize](#customize)
     - [Basics](#basics)
     - [Advanced](#advanced)
+- [Credits](#credits)
 - [Known issues](#known-issues)
 
 ## Examples
