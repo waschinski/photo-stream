@@ -94,7 +94,7 @@ First thing you want to do is edit a couple of things in `/_config.yml`:
     - `email`: Your email address (optional)
     - `website`: Your website (could be the address of this photo stream)
 - `description`: Description of your photo stream
-- `baseurl`: Should be `""` **⚠️ Do not change**
+- `baseurl`: Should be `""` **⚠️ Do not change unless you know what you're doing**
 - `url`: Where will this photo stream live (example: `https://maxvoltar.photo`)
 - `twitter_username`: Your Twitter username
 - `github_username`: Your Github username
