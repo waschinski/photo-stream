@@ -2,7 +2,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 	<title data-title="{{ site.title }}">{{ page.title | default: site.title }}</title>
-	<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{ site.url }}/feed.xml">
+	<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{ site.url }}feed.xml">
 	<meta property="og:title" content="{{ page.title | default: site.title }}">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="{{ page.url | absolute_url }}">
@@ -20,4 +20,6 @@
 	<link rel="stylesheet" type="text/css" media="screen" href="{{ '/css/master.css' | relative_url }}" />
 	<link rel="shortcut icon" type="image/svg+xml" href="{{ '/favicon.svg' | relative_url }}" />
 	<link rel="shortcut icon" type="image/png" href="{{ '/favicon.png' | relative_url }}" />
+	<link rel="apple-touch-icon" href="touch-icon-iphone.png" />
+	<link rel="mask-icon" href="favicon.svg" />
 </head>
