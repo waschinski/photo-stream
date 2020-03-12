@@ -79,9 +79,19 @@ brew install glib vips
 
 Put your photos (not resized) in the `photos/originals` directory. Optionally you can give them a name, which will appear as the title of the photo page and in the RSS feed.
 
+This command will serve the static page on your local machine. http://localhost:4000
 ```sh
 bundle exec jekyll serve
 ```
+
+You can also statically build your site to be uploaded to a regular webhost. 
+```sh
+bundle exec jekyll build
+```
+Now upload the contents of the _site/ directory to your webserver.
+
+### Automating the build & upload from your local development machine to your native webhost with Rsync
+Copy the bash script 'build-n-rsync.sh' from the _script directory to the root of your photo-stream folder. 
 
 ## Customize
 
