@@ -129,6 +129,7 @@ Before publishing your website, Jekyll will resize your photos into 3 different 
 - [@benubois](https://github.com/benubois)
 - [@mattsacks](https://github.com/mattsacks)
 - [@pjaspers](https://github.com/pjaspers)
+- [@cloudz](https://github.com/cloudz)
 
 ## Known issues
 
