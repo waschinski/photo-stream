@@ -7,6 +7,6 @@
         <path d="M10,9 L14,9 L14,12.7180574 C14,13.1638168 13.9535872,13.3254599 13.8664336,13.4884229 C13.7792801,13.6513858 13.6513858,13.7792801 13.4884229,13.8664336 C13.3254599,13.9535872 13.1638168,14 12.7180574,14 L10,14 L10,14 L10,9 Z" id="Rectangle-Copy-3" fill="#9BDACA"></path>
     </g>
 		<style>
-			@media (prefers-color-scheme: dark) { path#background { fill: #ffffff; } }
+			@media (prefers-color-scheme: dark) { #background { fill: #ffffff; } }
 		</style>
 </svg>
