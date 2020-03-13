@@ -19,8 +19,6 @@ Photo stream is a simpler home for your photos by [@maxvoltar](https://twitter.c
 
 ## Examples
 
-_Feel free to send me your photo streams on [Twitter](https://twitter.com/maxvoltar), or open a PR._
-
 - [maxvoltar.photo](https://maxvoltar.photo)
 - [joeyabanks.photo](https://joeyabanks.photo)
 - [photos.alexbaldwin.com](https://photos.alexbaldwin.com)
