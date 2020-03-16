@@ -25,6 +25,7 @@ Photo stream is a simpler home for your photos by [@maxvoltar](https://twitter.c
 - [scotts.camera](https://scotts.camera)
 - [jad.photos](https://jad.photos)
 - [photo.silvandaehn.com](https://photo.silvandaehn.com/)
+- [chriszeta.it](https://chriszeta.it)
 
 ## Features
 
