@@ -6,15 +6,15 @@
 	<meta property="og:title" content="{{ page.title | default: site.title }}">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="{{ page.url | absolute_url }}">
-	<meta property="og:image" content="{{ site.url }}{{ page.image | uri_escape | processed_path: 'large' }}">
+	<meta property="og:image" content="{{ site.url }}{{ page.images[0].name | uri_escape | processed_path: 'large' }}">
 	<meta property="og:site_name" content="{{ site.title }}">
 	<meta property="og:description" content="{{ site.description }}">
-	<meta name="thumbnail" content="{{ site.url }}{{ page.image | uri_escape | processed_path: 'large' }}">
+	<meta name="thumbnail" content="{{ site.url }}{{ page.images[0].name | uri_escape | processed_path: 'large' }}">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="{{ site.twitter_username }}">
 	<meta name="twitter:title" content="{{ page.title | default: site.title }}">
 	<meta name="twitter:description" content="{{ site.description }}">
-	<meta name="twitter:image:src" content="{{ site.url }}{{ page.image | uri_escape | processed_path: 'large' }}">
+	<meta name="twitter:image:src" content="{{ site.url }}{{ page.images[0].name | uri_escape | processed_path: 'large' }}">
 	<meta name="description" content="{{ site.description }}">
 	<script type="text/javascript" src="{{ '/js/lazy-loading.js' | relative_url }}"></script>
 	<link rel="stylesheet" type="text/css" media="screen" href="{{ '/css/master.css' | relative_url }}" />
