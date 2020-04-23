@@ -14,7 +14,7 @@
   }
 
   const openPhoto = (id, href) => {
-    const photo = document.querySelector(`#${id}`);
+    const photo = document.getElementById(id);
     const title = photo.getAttribute('title');
     removeTargetClass();
     photo.classList.add(TARGET_CLASS);
