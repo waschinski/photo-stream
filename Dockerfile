@@ -16,4 +16,4 @@ RUN ruby -v && gem install bundler jekyll && bundle install
 
 EXPOSE 4000
 
-ENTRYPOINT bundle exec jekyll serve
+ENTRYPOINT bundle exec jekyll serve --host 0.0.0.0
