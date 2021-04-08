@@ -76,6 +76,14 @@ xcode-select --install
 brew install glib vips
 ```
 
+### The Docker Hub way
+
+There is an image over at [Docker Hub](https://hub.docker.com/r/waschinski/photo-stream) which you can pull using:
+
+```docker pull waschinski/photo-stream:latest```
+
+You can then mount the `photos` volume and add your photos to it. This will preserve your photos without having to fork this project and add them there.
+
 ## How to use
 
 Put your photos (not resized) in the `photos/originals` directory. Optionally you can give them a name, which will appear as the title of the photo page and in the RSS feed.
@@ -99,22 +107,22 @@ Fill in the required credentials & run the script. It will build & upload your s
 
 ### Basics
 
-First thing you want to do is edit a couple of things in `/_config.yml`:
+First thing you want to do is edit a couple of things in `/.env`:
 
-- `title`: The title of your photo stream
-- `email`: Your email address (this line is optional, you can remove it)
-- `author`
-    - `name`: Your name
-    - `email`: Your email address (optional)
-    - `website`: Your website (could be the address of this photo stream)
-- `description`: Description of your photo stream
-- `baseurl`: Should be `""` **⚠️ Do not change unless you know what you're doing**
-- `url`: Where will this photo stream live (example: `https://maxvoltar.photo`)
-- `twitter_username`: Your Twitter username
-- `github_username`: Your Github username
-- `instagram_username`: Your Instagram username
+- `TITLE`: The title of your photo stream
+- `EMAIL`: Your email address (this line is optional, you can remove it)
+- `AUTHOR_NAME`: Your name
+- `AUTHOR_EMAIL`: Your email address (optional)
+- `AUTHOR_WEBSITE`: Your website (could be the address of this photo stream)
+- `DESCRIPTION`: Description of your photo stream
+- `BASEURL`: Should be left empty or removed **⚠️ Do not change unless you know what you're doing**
+- `URL`: Where will this photo stream live (example: `https://maxvoltar.photo`)
+- `SHOW_OFFICIAL_GITHUB`: Set to either `1` or `0` to enable or disable showing the link to the official github repository
+- `TWITTER_USERNAME`: Your Twitter username or remove/comment this line
+- `GITHUB_USERNAME`: Your Github username or remove/comment this line
+- `INSTAGRAM_USERNAME`: Your Instagram username or remove/comment this line
 
-Don't include the `@`-part of your social handles. By default links to your Github and Instagram profiles are hidden. You can uncomment these by going into `/index.html`. There, you can also add links to wherever you want. Just add more `<li>`'s with `class="link"` to the `<ul class="links">` list.
+Don't include the `@`-part of your social handles. Links to your Github, Twitter and Instagram profiles are only shown when set. In `/index.html` you can add more links to wherever you want. Just add more `<li>`'s with `class="link"` to the `<ul class="links">` list.
 
 ### Advanced
 
@@ -131,6 +139,7 @@ Before publishing your website, Jekyll will resize your photos into 3 different 
 - [@mattsacks](https://github.com/mattsacks)
 - [@pjaspers](https://github.com/pjaspers)
 - [@cloudz](https://github.com/cloudz)
+- [@waschinski](https://github.com/waschinski)
 
 ## Known issues
 
