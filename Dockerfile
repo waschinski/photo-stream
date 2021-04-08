@@ -12,7 +12,9 @@ COPY ./ /photo-stream
 
 WORKDIR /photo-stream
 
-RUN ruby -v && gem install bundler jekyll jekyll-environment-variables && bundle install
+RUN ruby -v && gem install bundler jekyll jekyll-environment-variables &&\
+    bundle config --local build.sassc --disable-march-tune-native &&\
+    bundle install
 
 EXPOSE 4000
 
