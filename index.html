@@ -12,11 +12,19 @@
 		</ul>
 		<ul class="links">
 			<!-- You can add links (to your social media profiles for example) below -->	
-			<li class="rss"><a rel="alternate" type="application/rss+xml" href="{{ site.url }}feed.xml" title="RSS Feed">RSS Feed</a></li>
+			<li class="rss"><a rel="alternate" type="application/rss+xml" href="{{ site.env.URL }}feed.xml" title="RSS Feed">RSS Feed</a></li>
+			{% if site.env.SHOW_OFFICIAL_GITHUB == "1" %}
 			<li class="github"><a rel="me" href="https://github.com/maxvoltar/photo-stream" title="Fork on Github">Github</a></li>
-			<li class="link"><a rel="me" href="https://twitter.com/{{ site.twitter_username }}" title="@{{ site.twitter_username }} on Twitter">Twitter</a></li>
-			<!-- <li class="link"><a rel="me" href="https://github.com/{{ site.github_username }}" title="@{{ site.github_username }} on Github">Github</a></li> -->
-			<!-- <li class="link"><a rel="me" href="https://instagram.com/{{ site.instagram_username }}" title="@{{ site.instagram_username }} on Instagram">Instagram</a></li> -->
+			{% endif %}
+			{% if site.env.TWITTER_USERNAME %}
+			<li class="twitter"><a rel="me" href="https://twitter.com/{{ site.env.TWITTER_USERNAME }}" title="@{{ site.env.TWITTER_USERNAME }} on Twitter">Twitter</a></li>
+			{% endif %}
+			{% if site.env.GITHUB_USERNAME %}
+			<li class="github"><a rel="me" href="https://github.com/{{ site.env.GITHUB_USERNAME }}" title="@{{ site.env.GITHUB_USERNAME }} on Github">Github</a></li>
+			{% endif %}
+			{% if site.env.INSTAGRAM_USERNAME %}
+			<li class="instagram"><a rel="me" href="https://instagram.com/{{ site.env.INSTAGRAM_USERNAME }}" title="@{{ site.env.INSTAGRAM_USERNAME }} on Instagram">Instagram</a></li>
+			{% endif %}
 		</ul>
 		{% include javascript.html %}
 		{% if page.image_slug %}
