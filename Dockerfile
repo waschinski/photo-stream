@@ -1,4 +1,4 @@
-FROM ruby:latest
+FROM ruby:2.7.2
 
 ENV VIPSVER 8.9.1
 RUN apt update && apt -y upgrade &&\
@@ -12,7 +12,7 @@ COPY ./ /photo-stream
 
 WORKDIR /photo-stream
 
-RUN ruby -v && gem install bundler jekyll && bundle install
+RUN ruby -v && gem install bundler jekyll jekyll-environment-variables && bundle install
 
 EXPOSE 4000
 

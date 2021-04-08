@@ -1,21 +1,21 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-	<title data-title="{{ site.title }}">{{ page.title | default: site.title }}</title>
-	<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{ site.url }}feed.xml">
-	<meta property="og:title" content="{{ page.title | default: site.title }}">
+	<title data-title="{{ site.env.TITLE }}">{{ page.title | default: site.env.TITLE }}</title>
+	<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{ site.env.URL }}feed.xml">
+	<meta property="og:title" content="{{ page.title | default: site.env.TITLE }}">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="{{ page.url | absolute_url }}">
-	<meta property="og:image" content="{{ site.url }}{{ page.images[0].name | uri_escape | processed_path: 'large' | default: 'social-preview.png' }}">
-	<meta property="og:site_name" content="{{ site.title }}">
-	<meta property="og:description" content="{{ site.description }}">
-	<meta name="thumbnail" content="{{ site.url }}{{ page.images[0].name | uri_escape | processed_path: 'large' | default: 'social-preview.png' }}">
+	<meta property="og:image" content="{{ site.env.URL }}{{ page.images[0].name | uri_escape | processed_path: 'large' | default: 'social-preview.png' }}">
+	<meta property="og:site_name" content="{{ site.env.TITLE }}">
+	<meta property="og:description" content="{{ site.env.DESCRIPTION }}">
+	<meta name="thumbnail" content="{{ site.env.URL }}{{ page.images[0].name | uri_escape | processed_path: 'large' | default: 'social-preview.png' }}">
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:site" content="{{ site.twitter_username }}">
-	<meta name="twitter:title" content="{{ page.title | default: site.title }}">
-	<meta name="twitter:description" content="{{ site.description }}">
-	<meta name="twitter:image:src" content="{{ site.url }}{{ page.images[0].name | uri_escape | processed_path: 'large' | default: 'social-preview.png' }}">
-	<meta name="description" content="{{ site.description }}">
+	<meta name="twitter:site" content="{{ site.env.TWITTER_USERNAME }}">
+	<meta name="twitter:title" content="{{ page.title | default: site.env.TITLE }}">
+	<meta name="twitter:description" content="{{ site.env.DESCRIPTION }}">
+	<meta name="twitter:image:src" content="{{ site.env.URL }}{{ page.images[0].name | uri_escape | processed_path: 'large' | default: 'social-preview.png' }}">
+	<meta name="description" content="{{ site.env.DESCRIPTION }}">
 	<script type="text/javascript" src="{{ '/js/lazy-loading.js' | relative_url }}"></script>
 	<link rel="stylesheet" type="text/css" media="screen" href="{{ '/css/master.css' | relative_url }}" />
 	<link rel="shortcut icon" type="image/svg+xml" href="{{ '/favicon.svg' | relative_url }}" />

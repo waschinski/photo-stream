@@ -1,0 +1,24 @@
+version: "3.7"
+services:
+  photo-stream:
+    build: .
+    environment:
+      - TITLE=maxvoltar.photo
+      - EMAIL=tim@maxvoltar.be
+      - AUTHOR_NAME=Tim Van Damme
+      - AUTHOR_EMAIL=tim@maxvoltar.be
+      - AUTHOR_WEBSITE=https://maxvoltar.com
+      - DESCRIPTION=@maxvoltar's minimalistic, self-hosted photo stream.
+      - BASEURL=
+      - URL=https://maxvoltar.photo/
+      - SHOW_OFFICIAL_GITHUB=0
+      - TWITTER_USERNAME=naitakal
+      - INSTAGRAM_USERNAME=naitakal
+    volumes:
+      - photos:/photo-stream/photos
+    env_file: .env
+    ports:
+      - "4000:4000"
+    restart: unless-stopped
+volumes:
+  photos:
