@@ -1,8 +1,9 @@
-FROM ruby:2.7.2
+FROM ruby:2.7.3-alpine3.13
 
 ENV VIPSVER 8.9.1
-RUN apt update && apt -y upgrade &&\
-    apt install -y build-essential
+RUN apk update && apk upgrade &&\
+    apk add --update --no-cache build-base glib-dev expat-dev tiff-dev jpeg-dev libgsf-dev git &&\
+    rm -rf /var/cache/apk/*
 
 RUN wget -O ./vips-$VIPSVER.tar.gz https://github.com/libvips/libvips/releases/download/v$VIPSVER/vips-$VIPSVER.tar.gz
 
