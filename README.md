@@ -2,14 +2,15 @@
 
 # Photo Stream
 
-Photo stream is a simpler home for your photos by [@maxvoltar](https://twitter.com/maxvoltar) and [friends](#credits). Easy to use, self hosted, no tracking, just photos.
+Photo stream is a simpler home for your photos initially created by [@maxvoltar](https://github.com/maxvoltar/photo-stream) and [friends](#credits) and now maintained by [@waschinski](https://github.com/waschinski). Easy to use, self hosted, no tracking, just photos.
 
 - [Examples](#examples)
 - [Features](#features)
 - [Why?](#why)
 - [How to Install](#how-to-install)
-    - [The easy way](#the-easy-way)
-    - [The slightly-less-easy-but-still-totally-doable way](#the-slightly-less-easy-but-still-totally-doable-way)
+    - [Using docker](#using-docker)
+    - [By cloning this repository](#by-cloning-this-repository)
+    - [Manually](#manually)
 - [How to use](#how-to-use)
 - [Customize](#customize)
     - [Basics](#basics)
@@ -22,7 +23,6 @@ Photo stream is a simpler home for your photos by [@maxvoltar](https://twitter.c
 - [maxvoltar.photo](https://maxvoltar.photo)
 - [joeyabanks.photo](https://joeyabanks.photo)
 - [photos.alexbaldwin.com](https://photos.alexbaldwin.com)
-- [scotts.camera](https://scotts.camera)
 - [jad.photos](https://jad.photos)
 - [photo.silvandaehn.com](https://photo.silvandaehn.com/)
 - [chriszeta.it](https://chriszeta.it)
@@ -46,16 +46,34 @@ We like to take photos and share them. Problem is it's hard to really own your p
 
 ## How to install
 
-### The easy way
+Previously the recommended way to install photo-stream was to fork the repository. In my opinion this was not really optimal and being a fan of Docker I began working on optimizations to run photo-stream in a container. That's why configuration has been moved from `_config.yml` to `.env` so when switching from the initial repo you will have to set up the `.env` file accordingly.
 
-1. Fork this repo
-2. Clear the `photos/original` directory
-3. Add your own photos
+### Using docker
+
+There is an image over at [Docker Hub](https://hub.docker.com/r/waschinski/photo-stream) which you can pull using:
+
+```sh
+docker pull waschinski/photo-stream:latest
+```
+
+Alternatively download the `docker-compose.yml` file, change the configuration as needed and use the following command to get photo-stream running:
+
+```sh
+docker-compose up -d
+```
+
+The `photos` folder can be mounted as a volume. Make sure to put your photos in a folder called `original`.
+
+### By cloning this repository
+
+1. Clone this repo
+2. Add your own photos to the `photos/original` directory
+3. Adjust the variables in `.env` to your liking
 4. Deploy your forked copy to [Netlify](https://netlify.com) (free by default, you can add your own domain and analytics for a reasonable price)
 5. In your build & deploy settings, set "Build command" to `jekyll build` and "Publish directory" to `_site/`.
 6. Enjoy your very own photo stream!
 
-### The slightly-less-easy-but-still-totally-doable way
+### Manually
 
 Check to see if you have Ruby installed (`ruby -v`). If you don't, you can follow the installation instructions provided [here](https://www.ruby-lang.org/en/documentation/installation/).
 
@@ -75,14 +93,6 @@ xcode-select --install
 # like, take a sec away from the computer and breathe for a bit.
 brew install glib vips
 ```
-
-### The Docker Hub way
-
-There is an image over at [Docker Hub](https://hub.docker.com/r/waschinski/photo-stream) which you can pull using:
-
-```docker pull waschinski/photo-stream:latest```
-
-You can then mount the `photos` volume and add your photos to it. This will preserve your photos without having to fork this project and add them there.
 
 ## How to use
 
