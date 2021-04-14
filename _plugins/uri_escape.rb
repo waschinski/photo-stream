@@ -1,9 +1,9 @@
-require "uri"
+require "cgi"
 
 module Jekyll
   module URIEscape
     def uri_escape(text)
-      URI.escape(text) if !text.nil?
+      CGI.escape(text) if !text.nil?
     end
   end
 end
