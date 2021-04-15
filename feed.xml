@@ -11,7 +11,7 @@
 	<title type="html">{{ site.env.TITLE}}</title>
 	<subtitle>{{ site.env.DESCRIPTION }}</subtitle>
 
-	{% if site.env.AUTHOR_NAME %}
+	{% if site.env.AUTHOR_NAME or site.env.AUTHOR_EMAIL or site.env.AUTHOR_WEBSITE %}
 		<author>
 			{% if site.env.AUTHOR_NAME %}
 				<name>{{ site.env.AUTHOR_NAME }}</name>
