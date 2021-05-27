@@ -9,7 +9,6 @@ Photo stream is a simpler home for your photos initially created by [@maxvoltar]
 - [Why?](#why)
 - [How to Install](#how-to-install)
     - [Using docker](#using-docker)
-    - [By cloning this repository](#by-cloning-this-repository)
     - [Manually](#manually)
 - [How to use](#how-to-use)
 - [Customize](#customize)
@@ -64,15 +63,6 @@ docker-compose up -d
 
 The `photos` folder can be mounted as a volume. Make sure to put your photos in a folder called `original`.
 
-### By cloning this repository
-
-1. Clone this repo
-2. Add your own photos to the `photos/original` directory
-3. Adjust the variables in `.env` to your liking
-4. Deploy your forked copy to [Netlify](https://netlify.com) (free by default, you can add your own domain and analytics for a reasonable price)
-5. In your build & deploy settings, set "Build command" to `jekyll build` and "Publish directory" to `_site/`.
-6. Enjoy your very own photo stream!
-
 ### Manually
 
 Check to see if you have Ruby installed (`ruby -v`). If you don't, you can follow the installation instructions provided [here](https://www.ruby-lang.org/en/documentation/installation/).
@@ -109,9 +99,11 @@ bundle exec jekyll build
 ```
 Now upload the contents of the _site/ directory to your webserver.
 
-### Automating the build & upload with rsync
-Copy the bash script 'build-n-rsync.sh' from the _script directory to the root of your photo-stream folder. 
-Fill in the required credentials & run the script. It will build & upload your site. 
+### Automating the build & upload with rsync or lftp
+
+Just execute the script you need to run directly from the `_scripts` folder.
+
+`build.sh` will build your site while `rsync.sh` and `lftp.sh` will sync it accordingly. `build-n-rsync.sh` and `build-n-lftp.sh` are simply doing both steps in one. Don't forget to add your configuration in the `.env` file.
 
 ## Customize
 
@@ -131,6 +123,10 @@ First thing you want to do is edit a couple of things in `/.env`:
 - `TWITTER_USERNAME`: Your Twitter username or remove/comment this line
 - `GITHUB_USERNAME`: Your Github username or remove/comment this line
 - `INSTAGRAM_USERNAME`: Your Instagram username or remove/comment this line
+- `SYNCUSER`: Your username being used by lftp/rsync in the shell scripts to sync your site to your webserver
+- `SYNCPASS`: Your password being used by lftp/rsync in the shell scripts to sync your site to your webserver
+- `SYNCSERVER`: The URL of your webserver being used by lftp/rsync in the shell scripts where your site will be synced to
+- `SYNCFOLDER`: The folder on your webserver being used by lftp/rsync in the shell scripts where your site will be synced to
 
 Don't include the `@`-part of your social handles. Links to your Github, Twitter and Instagram profiles are only shown when set. In `/index.html` you can add more links to wherever you want. Just add more `<li>`'s with `class="link"` to the `<ul class="links">` list.
 
