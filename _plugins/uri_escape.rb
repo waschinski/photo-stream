@@ -1,9 +1,10 @@
-require "cgi"
+require "erb"
+include ERB::Util
 
 module Jekyll
   module URIEscape
     def uri_escape(text)
-      CGI.escape(text) if !text.nil?
+      url_encode(text).gsub("+", "%20") if !text.nil?
     end
   end
 end
