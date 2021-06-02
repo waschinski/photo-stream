@@ -2,7 +2,7 @@
 
 # Photo Stream
 
-Photo stream is a simpler home for your photos initially created by [@maxvoltar](https://github.com/maxvoltar/photo-stream) and [friends](#credits) and now maintained by [@waschinski](https://github.com/waschinski). Easy to use, self hosted, no tracking, just photos.
+Photo stream is a simpler home for your photos initially created by [@maxvoltar](https://github.com/maxvoltar/photo-stream) and now maintained by [@waschinski](https://github.com/waschinski) and [friends](#credits). Easy to use, self hosted, no tracking, just photos.
 
 - [Examples](#examples)
 - [Features](#features)
@@ -19,6 +19,7 @@ Photo stream is a simpler home for your photos initially created by [@maxvoltar]
 
 ## Examples
 
+- [floremotion.de](https://floremotion.de)
 - [maxvoltar.photo](https://maxvoltar.photo)
 - [joeyabanks.photo](https://joeyabanks.photo)
 - [photos.alexbaldwin.com](https://photos.alexbaldwin.com)
@@ -34,7 +35,7 @@ Photo stream is a simpler home for your photos initially created by [@maxvoltar]
 - Photo tints
 - Keyboard shortcuts
 - Unique URL's for photos
-- RSS feed (Which you can plug into [IFTTT](https://ifttt.com) and set up auto-posting to most social networks, like I've done [here](https://twitter.com/maxvoltar_photo). Make sure you select "Post a tweet with image" when setting it up to embed the photo.)
+- RSS feed (Which you can plug into [IFTTT](https://ifttt.com) and set up auto-posting to most social networks, like [@maxvoltar](https://github.com/maxvoltar) has done [here](https://twitter.com/maxvoltar_photo). Make sure you select "Post a tweet with image" when setting it up to embed the photo.)
 - Drag, drop, commit workflow ([learn more about how to add photos to your stream](https://github.com/maxvoltar/photo-stream#how-to-use))
 - Optimized light and dark themes (auto-enabled depending on your OS preferences)
 - Optional: Links to your social networks
@@ -101,9 +102,12 @@ Now upload the contents of the _site/ directory to your webserver.
 
 ### Automating the build & upload with rsync or lftp
 
-Just execute the script you need to run directly from the `_scripts` folder.
+Just execute the script you need to run directly from the `_scripts` folder like that:
+```sh
+sh ./_script/build-n-lftp.sh
+```
 
-`build.sh` will build your site while `rsync.sh` and `lftp.sh` will sync it accordingly. `build-n-rsync.sh` and `build-n-lftp.sh` are simply doing both steps in one. Don't forget to add your configuration in the `.env` file.
+`build.sh` will build your site while `rsync.sh` and `lftp.sh` will sync it accordingly. `build-n-rsync.sh` and `build-n-lftp.sh` are simply doing both steps in one. Don't forget to add your sync configuration in the `.env` file.
 
 ## Customize
 
@@ -128,7 +132,7 @@ First thing you want to do is edit a couple of things in `/.env`:
 - `SYNCSERVER`: The URL of your webserver being used by lftp/rsync in the shell scripts where your site will be synced to
 - `SYNCFOLDER`: The folder on your webserver being used by lftp/rsync in the shell scripts where your site will be synced to
 
-Don't include the `@`-part of your social handles. Links to your Github, Twitter and Instagram profiles are only shown when set. In `/index.html` you can add more links to wherever you want. Just add more `<li>`'s with `class="link"` to the `<ul class="links">` list.
+Don't include the `@`-part of your social handles. Links to your Github, Twitter and Instagram profiles are only shown when set.
 
 ### Advanced
 
