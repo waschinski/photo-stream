@@ -20,6 +20,7 @@
 #
 # Build settings
 plugins:
+  - jekyll-dotenv
   - jekyll-exif-data
 
 image_processing:
