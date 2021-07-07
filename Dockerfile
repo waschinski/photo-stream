@@ -13,7 +13,7 @@ COPY ./ /photo-stream
 
 WORKDIR /photo-stream
 
-RUN ruby -v && gem install bundler jekyll jekyll-environment-variables &&\
+RUN ruby -v && gem install bundler jekyll &&\
     bundle config --local build.sassc --disable-march-tune-native &&\
     bundle install
 
