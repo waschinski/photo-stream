@@ -1,4 +1,4 @@
-FROM ruby:2.7.3-alpine3.13
+FROM ruby:3.0.1-alpine3.13
 
 ENV VIPSVER 8.9.1
 RUN apk update && apk upgrade &&\
