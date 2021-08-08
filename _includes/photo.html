@@ -11,25 +11,24 @@
     {% assign target = "" %}
 {% endif %}
 
-<li class="item {{ target }}" id="{{ slug }}" style="background-image: url('{{ safe_name | processed_path: 'tint' }}')" title="{{ image.name | strip_extension }}">
+<li class="item {{ target }}" id="id-{{ slug }}" style="background-image: url('{{ safe_name | processed_path: 'tint' }}')" title="{{ image.name | strip_extension }}">
 
-	<img class="lazyload" data-src="{{ safe_name | processed_path: 'thumbnail' }}" src="{{ safe_name | processed_path: 'tint' }}" height="{{ image_path | exif: 'height'}}" width="{{ image_path | exif: 'width'}}" />
-	<span class="full">
-		<span style="background-image: url('{{ safe_name | processed_path: 'large' }}')"></span>
-	</span>
-	<a class="open" href="{{ slug | relative_url  }}" data-target="{{ slug }}">Open</a>
-	<a class="close" href="{{ '/' | relative_url }}">Close</a>
-
+    <img class="lazyload" data-src="{{ safe_name | processed_path: 'thumbnail' }}" src="{{ safe_name | processed_path: 'tint' }}" height="{{ image_path | exif: 'height'}}" width="{{ image_path | exif: 'width'}}" />
+    <span class="full">
+        <span style="background-image: url('{{ safe_name | processed_path: 'large' }}')"></span>
+    </span>
+    <a class="open" href="{{ slug | relative_url  }}" data-target="id-{{ slug }}">Open</a>
+    <a class="close" href="{{ '/' | relative_url }}">Close</a>
     {% unless forloop.first %}
-    	{% assign previous_slug = images[previous_index].name | strip_extension | slugify %}
-    	<a href="{{ previous_slug | relative_url }}" data-target="{{ previous_slug }}" class="previous" title="Go to previous photo">
+        {% assign previous_slug = images[previous_index].name | strip_extension | slugify %}
+        <a href="{{ previous_slug | relative_url }}" data-target="id-{{ previous_slug }}" class="previous" title="Go to previous photo">
             <span>Previous</span>
         </a>
     {% endunless %}
 
     {% unless forloop.last %}
-    	{% assign next_slug = images[next_index].name | strip_extension | slugify %}
-        <a href="{{ next_slug | relative_url }}" data-target="{{ next_slug }}" class="next" title="Go to next photo">
+        {% assign next_slug = images[next_index].name | strip_extension | slugify %}
+        <a href="{{ next_slug | relative_url }}" data-target="id-{{ next_slug }}" class="next" title="Go to next photo">
             <span>Next</span>
         </a>
     {% endunless %}
@@ -38,5 +37,5 @@
     <li>{{ image_path | exif: 'model'}}</li>
     <li>{{ image_path | exif: 'exposure_time.to_s'}}</li>
     <li><span class="aperture"><em>f</em>/</span>{{ image_path | exif: 'f_number.to_f'}}</li>
-	</ul> -->
+    </ul> -->
 </li>
