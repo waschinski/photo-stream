@@ -1,7 +1,10 @@
 version: "3.7"
 services:
   photo-stream:
-    build: .
+    container_name: photo-stream
+    image: waschinski/photo-stream:latest
+    #To build from source, comment previous line and uncomment next line
+    #build: .
     environment:
       - TITLE=maxvoltar.photo
       - EMAIL=tim@maxvoltar.be
@@ -11,12 +14,9 @@ services:
       - DESCRIPTION=@maxvoltar's minimalistic, self-hosted photo stream.
       - BASEURL=
       - URL=https://maxvoltar.photo/
-      - SHOW_OFFICIAL_GITHUB=0
-      - TWITTER_USERNAME=naitakal
-      - INSTAGRAM_USERNAME=naitakal
+      - SHOW_OFFICIAL_GITHUB=1
     volumes:
       - photos:/photo-stream/photos
-    env_file: .env
     ports:
       - "4000:4000"
     restart: unless-stopped
