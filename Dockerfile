@@ -1,6 +1,6 @@
 FROM ruby:3.0.1-alpine3.13
 
-ENV VIPSVER 8.9.1
+ENV VIPSVER 8.11.3
 RUN apk update && apk upgrade &&\
     apk add --update --no-cache build-base glib-dev expat-dev tiff-dev jpeg-dev libgsf-dev git rsync lftp openssh &&\
     rm -rf /var/cache/apk/*
