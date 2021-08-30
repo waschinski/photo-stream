@@ -87,7 +87,7 @@ brew install glib vips
 
 ## How to use
 
-Put your photos (not resized) in the `photos/originals` directory. Optionally you can give them a name, which will appear as the title of the photo page and in the RSS feed.
+Put your photos (not resized) in the `photos/original` directory. Optionally you can give them a name, which will appear as the title of the photo page and in the RSS feed.
 
 This command will serve the static page on your local machine. http://localhost:4000
 ```sh
