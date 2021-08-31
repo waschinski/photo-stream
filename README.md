@@ -2,7 +2,7 @@
 
 # Photo Stream
 
-Photo stream is a simpler home for your photos initially created by [@maxvoltar](https://github.com/maxvoltar/photo-stream) and now maintained by [@waschinski](https://github.com/waschinski) and [friends](#credits). Easy to use, self hosted, no tracking, just photos.
+Photo Stream is a simpler home for your photos initially created by [@maxvoltar](https://github.com/maxvoltar/photo-stream) and now maintained by [@waschinski](https://github.com/waschinski) and [friends](#credits). Easy to use, self hosted, no tracking, just photos.
 
 - [Examples](#examples)
 - [Features](#features)
@@ -46,7 +46,7 @@ We like to take photos and share them. Problem is it's hard to really own your p
 
 ## How to install
 
-Previously the recommended way to install photo-stream was to fork the repository. In my opinion this was not really optimal and being a fan of Docker I began working on optimizations to run photo-stream in a container. That's why configuration has been moved from `_config.yml` to `.env` so when switching from the initial repo you will have to set up the `.env` file accordingly.
+Previously the recommended way to install Photo Stream was to fork the repository. In my opinion this was not really optimal and being a fan of Docker I began working on optimizations to run Photo Stream in a container. That's why configuration has been moved from `_config.yml` to `.env` so when switching from the initial repo you will have to set up the `.env` file accordingly.
 
 ### Using docker
 
@@ -56,7 +56,7 @@ There is an image over at [Docker Hub](https://hub.docker.com/r/waschinski/photo
 docker pull waschinski/photo-stream:latest
 ```
 
-Alternatively download the `docker-compose.yml` file, change the configuration as needed and use the following command to get photo-stream running:
+Alternatively download the `docker-compose.yml` file, change the configuration as needed and use the following command to get Photo Stream running:
 
 ```sh
 docker-compose up -d
@@ -66,23 +66,29 @@ The `photos` folder can be mounted as a volume. Make sure to put your photos in 
 
 ### Manually
 
-Check to see if you have Ruby installed (`ruby -v`). If you don't, you can follow the installation instructions provided [here](https://www.ruby-lang.org/en/documentation/installation/).
+Grab the latest version from the [release](https://github.com/waschinski/photo-stream/releases) page and extract it.
 
-Next you'll have to install [Jekyll](https://jekyllrb.com) (a simple `gem install bundler jekyll` should suffice).
+Make sure you meet the following requirements in order to run Photo Stream:
 
+#### Build tools
+
+How to install these depends on your OS. Debian users will go with `sudo apt-get install build-essential` while on MacOS you should be fine with `xcode-select --install`.
+
+#### Ruby (v3+ recommended)
+
+Check to see if you already have Ruby installed (`ruby -v`). If you don't, you can follow the installation instructions provided [here](https://www.ruby-lang.org/en/documentation/installation/).
+
+#### libvips
+
+Instructions on how to install libvips can be found [here](https://libvips.github.io/libvips/install.html).
+
+#### Jekyll
+
+Next you'll have to install [Jekyll](https://jekyllrb.com) (a simple `gem install bundler jekyll` should suffice). Make sure you meet its [requirements](https://jekyllrb.com/docs/installation/#requirements) or install them as well before proceeding.
+
+Once all these requirements are met you can finally install all the gems required by Photo Stream (you should be in the Photo Stream folder):
 ```sh
 bundle install
-```
-
-You'll also need some additional dependencies:
-
-```sh
-# Make sure xcode CLT is installed first:
-xcode-select --install
-
-# This takes a while. Plug your laptop in and go grab a coffee, a book, or just
-# like, take a sec away from the computer and breathe for a bit.
-brew install glib vips
 ```
 
 ## How to use
@@ -153,4 +159,4 @@ Before publishing your website, Jekyll will resize your photos into 3 different 
 
 ## Known issues
 
-- You might see a `VIPS-WARNING` message while running `jekyll serve`. This is [a bug in libvips](https://github.com/libvips/libvips/issues/394#issuecomment-359780578) that's being tracked, but it's harmless.
+- A few users have reported problems with image rotation. While I was able to reproduce the issue and implement a potential fix it obviously didn't solve the problem for all users. Please let me know if you encounter this or other issues.
