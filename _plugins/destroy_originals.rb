@@ -16,7 +16,7 @@ module Jekyll
         end
       end
       directories.each do |directory|
-        FileUtils.rm_f(Dir.glob("#{directory}/*.jp*g"))
+        FileUtils.rm_f(Dir.glob("#{directory}/*.[jJ][pP]*[gG]"))
       end
     end
   end
