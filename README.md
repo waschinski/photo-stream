@@ -64,6 +64,16 @@ docker-compose up -d
 
 The `photos` folder can be mounted as a volume. Make sure to put your photos in a folder called `original`.
 
+#### Using docker on raspberry pi:
+
+Prerequisites : docker and docker-compose are installed on RPI
+
+In docker-compose.yml comment `image` section, uncomment `build` section, and setup `BASE_REPO` arg to `arm32v6/ruby:3.0.1-alpine3.12`.
+
+Then `docker-compose build`
+
+Then `docker-compose up -d`
+
 ### Manually
 
 Grab the latest version from the [release](https://github.com/waschinski/photo-stream/releases) page and extract it.
