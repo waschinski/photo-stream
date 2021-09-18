@@ -4,21 +4,26 @@ services:
     container_name: photo-stream
     image: waschinski/photo-stream:latest
     #To build from source, comment previous line and uncomment next line
-    #build: .
+    # build:
+    #   context: .
+    #   args:
+    ##     - DEBUG=true
+    ##     - BASE_IMAGE=arm32v6/ruby:3.0.1-alpine3.12 # arm base image for RPI
     environment:
-      - TITLE=maxvoltar.photo
-      - EMAIL=tim@maxvoltar.be
-      - AUTHOR_NAME=Tim Van Damme
-      - AUTHOR_EMAIL=tim@maxvoltar.be
-      - AUTHOR_WEBSITE=https://maxvoltar.com
-      - DESCRIPTION=@maxvoltar's minimalistic, self-hosted photo stream.
-      - BASEURL=
-      - URL=https://maxvoltar.photo/
-      - SHOW_OFFICIAL_GITHUB=1
+      - TITLE=${TITLE}
+      - EMAIL=${EMAIL}
+      - AUTHOR_NAME=${AUTHOR_NAME}
+      - AUTHOR_EMAIL=${AUTHOR_EMAIL}
+      - AUTHOR_WEBSITE=${AUTHOR_WEBSITE}
+      - DESCRIPTION=${DESCRIPTION}
+      - BASEURL=${BASEURL}
+      - URL=${URL}
+      - SHOW_OFFICIAL_GITHUB=${SHOW_OFFICIAL_GITHUB}
+      - TWITTER_USERNAME=${TWITTER_USERNAME}
+      - INSTAGRAM_USERNAME=${INSTAGRAM_USERNAME}
     volumes:
-      - photos:/photo-stream/photos
+      - ${PHOTO_PATH}:/photo-stream/photos/original
+    env_file: .env
     ports:
       - "4000:4000"
     restart: unless-stopped
-volumes:
-  photos:
