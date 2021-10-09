@@ -15,7 +15,6 @@ Photo Stream is a simpler home for your photos initially created by [@maxvoltar]
     - [Basics](#basics)
     - [Advanced](#advanced)
 - [Credits](#credits)
-- [Known issues](#known-issues)
 
 ## Examples
 
@@ -166,7 +165,3 @@ Before publishing your website, Jekyll will resize your photos into 3 different 
 - [@pjaspers](https://github.com/pjaspers)
 - [@cloudz](https://github.com/cloudz)
 - [@waschinski](https://github.com/waschinski)
-
-## Known issues
-
-- A few users have reported problems with image rotation. While I was able to reproduce the issue and implement a potential fix it obviously didn't solve the problem for all users. Please let me know if you encounter this or other issues.
