@@ -1,6 +1,7 @@
 ARG  BASE_IMAGE=ruby:3.0.1-alpine3.13
 FROM ${BASE_IMAGE}
 ENV VIPSVER 8.11.3
+ENV VAGRANT_DISABLE_RESOLV_REPLACE=1
 RUN apk update && apk upgrade && \
     apk add --update --no-cache build-base glib-dev expat-dev tiff-dev jpeg-dev libgsf-dev git rsync lftp openssh libexif-dev &&\
     rm -rf /var/cache/apk/*
