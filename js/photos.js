@@ -7,6 +7,6 @@
   const target = document.currentScript.getAttribute('data-target-id');
   const container = document.querySelector(`#${target}`);
   container.innerHTML = html;
-  openPhoto(id, url);
+  openPhoto("id-"+id, url);
   lazyload();
 })(`{% include photos.html %}`);
