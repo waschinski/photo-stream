@@ -11,20 +11,23 @@
 		{% include photos.html %}
 		</ul>
 		<ul class="links">
+			{% if site.env.ALLOW_ORDER_SORT_CHANGE == "1" %}
+			<li class="sort"><a rel="me" href="#" title="Reverse sort order">Sort</a></li>
+			{% endif %}
 			<li class="rss"><a rel="alternate" type="application/rss+xml" href="{{ site.env.URL }}feed.xml" title="RSS Feed">RSS Feed</a></li>
 			{% if site.env.SHOW_OFFICIAL_GITHUB == "1" %}
 			<li class="github"><a rel="me" href="https://github.com/waschinski/photo-stream" title="Fork on Github">Github</a></li>
 			{% endif %}
-			{% if site.env.TWITTER_USERNAME %}
+			{% if site.env.TWITTER_USERNAME != "" %}
 			<li class="twitter"><a rel="me" href="https://twitter.com/{{ site.env.TWITTER_USERNAME }}" title="@{{ site.env.TWITTER_USERNAME }} on Twitter">Twitter</a></li>
 			{% endif %}
-			{% if site.env.GITHUB_USERNAME %}
+			{% if site.env.GITHUB_USERNAME != "" %}
 			<li class="github"><a rel="me" href="https://github.com/{{ site.env.GITHUB_USERNAME }}" title="@{{ site.env.GITHUB_USERNAME }} on Github">Github</a></li>
 			{% endif %}
-			{% if site.env.INSTAGRAM_USERNAME %}
+			{% if site.env.INSTAGRAM_USERNAME != "" %}
 			<li class="instagram"><a rel="me" href="https://instagram.com/{{ site.env.INSTAGRAM_USERNAME }}" title="@{{ site.env.INSTAGRAM_USERNAME }} on Instagram">Instagram</a></li>
 			{% endif %}
-			{% if site.env.CUSTOM_LINK_URL and site.env.CUSTOM_LINK_NAME %}
+			{% if site.env.CUSTOM_LINK_URL != "" and site.env.CUSTOM_LINK_NAME != "" %}
 			<li class="link"><a rel="me" href="{{ site.env.CUSTOM_LINK_URL }}" title="{{ site.env.CUSTOM_LINK_NAME }}">{{ site.env.CUSTOM_LINK_NAME }}</a></li>
 			{% endif %}
 		</ul>
