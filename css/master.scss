@@ -36,8 +36,7 @@
 	// 	background-color: rgba(0, 0, 0, .25);
 	// }
 	
-	&:hover,
-	&:focus {
+	&:hover {
 		background-color: rgba(200, 200, 200, .5);
 		// Disable until Safari supports `prefers-color-scheme` in SVG's
 		// @include dark {
@@ -311,6 +310,12 @@ body {
 		&.rss {
 			a {
 				background-image: url(../img/icon-rss.svg);
+			}
+		}
+
+		&.sort {
+			a {
+				background-image: url(../img/icon-sort.svg);
 			}
 		}
 		
