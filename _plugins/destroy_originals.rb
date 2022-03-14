@@ -9,14 +9,17 @@ module Jekyll
     end
 
     def self.destroy
-      directories = jekyll_config["image_processing"].each_with_object([]) do |(size, size_options), array|
-        directory = File.join(jekyll_config["destination"], size_options["source"])
-        if directory != jekyll_config["destination"]
-          array.push(directory)
+      # remove the original files when downloads are disabled
+      unless jekyll_config["env"]["ALLOW_ORIGINAL_DOWNLOAD"] == "1"
+        directories = jekyll_config["image_processing"].each_with_object([]) do |(size, size_options), array|
+          directory = File.join(jekyll_config["destination"], size_options["source"])
+          if directory != jekyll_config["destination"]
+            array.push(directory)
+          end
         end
-      end
-      directories.each do |directory|
-        FileUtils.rm_f(Dir.glob("#{directory}/*.[jJ][pP]*[gG]"))
+        directories.each do |directory|
+          FileUtils.rm_f(Dir.glob("#{directory}/*.[jJ][pP]*[gG]"))
+        end
       end
     end
   end
