@@ -104,6 +104,17 @@ body {
 			outline-color: #000;
 		}
 
+		&:focus,
+		&:hover {
+			.meta .download {
+			   visibility: visible;
+		   }
+
+		   .open {
+				background-color: rgba(0, 0, 0, .25);
+		   }
+		}
+
 		img {
 			max-height: 100%;
 			min-width: 100%;
@@ -209,6 +220,22 @@ body {
 		
 			li {
 				margin-right: 12px;
+
+				.download {
+					@include button;
+					visibility: hidden;
+					background-color: rgba(200, 200, 200, .5);
+					background-image: url(../img/icon-download.svg);
+
+					&:focus,
+					&:hover {
+						background-color: rgba(200, 200, 200, .75);
+					}
+
+					&:active {
+						background-color: rgba(200, 200, 200, 1);
+					}
+				}
 			}
 		}
 		
@@ -267,6 +294,23 @@ body {
 			.previous,
 			.next {
 				display: flex;
+
+				&.download {
+					height: 75px;
+					
+					span {
+						background-image: url(../img/icon-download.svg);
+
+						&:focus,
+						&:hover {
+							background-color: rgba(200, 200, 200, .5);
+						}
+
+						&:active {
+							background-color: rgba(200, 200, 200, .75);
+						}
+					}
+				}
 			}
 		}
 	}
@@ -424,6 +468,14 @@ body {
 			
 			.next {
 				cursor: e-resize;
+			}
+
+			.meta {
+				li {
+					.download {
+						visibility: visible;
+					}
+				}
 			}
 		}
 	}
