@@ -21,6 +21,7 @@ services:
       - SHOW_OFFICIAL_GITHUB=${SHOW_OFFICIAL_GITHUB}
       - TWITTER_USERNAME=${TWITTER_USERNAME}
       - INSTAGRAM_USERNAME=${INSTAGRAM_USERNAME}
+      - ALLOW_ORIGINAL_DOWNLOAD=${ALLOW_ORIGINAL_DOWNLOAD}
     volumes:
       - ${PHOTO_PATH}:/photo-stream/photos/original
     env_file: .env
