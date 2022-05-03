@@ -32,10 +32,18 @@
             <span>Next</span>
         </a>
     {% endunless %}
+    {% if site.env.ALLOW_ORIGINAL_DOWNLOAD == "1" %}
+        <a href="{{ image.path }}" download="{{ safe_name }}" class="next download" title="Download this image"><span>Download</span></a>
+    {% endif %}
 
-    <!-- <ul class="meta">
-    <li>{{ image_path | exif: 'model'}}</li>
-    <li>{{ image_path | exif: 'exposure_time.to_s'}}</li>
-    <li><span class="aperture"><em>f</em>/</span>{{ image_path | exif: 'f_number.to_f'}}</li>
-    </ul> -->
+    <ul class="meta">
+        <!--
+        <li>{{ image_path | exif: 'model'}}</li>
+        <li>{{ image_path | exif: 'exposure_time.to_s'}}</li>
+        <li><span class="aperture"><em>f</em>/</span>{{ image_path | exif: 'f_number.to_f'}}</li>
+        -->
+        {% if site.env.ALLOW_ORIGINAL_DOWNLOAD == "1" %}
+            <li><a href="{{ image.path }}" download="{{ safe_name }}" class="download" title="Download this image">Download</a></li>
+        {% endif %}
+    </ul>
 </li>
