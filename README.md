@@ -161,9 +161,5 @@ Before publishing your website, Jekyll will resize your photos into 3 different 
 
 ## Credits
 
-- [@maxvoltar](https://github.com/maxvoltar)
-- [@benubois](https://github.com/benubois)
-- [@mattsacks](https://github.com/mattsacks)
-- [@pjaspers](https://github.com/pjaspers)
-- [@cloudz](https://github.com/cloudz)
-- [@waschinski](https://github.com/waschinski)
+- [All contributors](https://github.com/waschinski/photo-stream/graphs/contributors)
+- [Carrie Cronan for the photos used for demonstration](https://unsplash.com/@ccronan)

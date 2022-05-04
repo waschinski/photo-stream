@@ -1,7 +1,7 @@
 module Jekyll
   module RenamePhotos
     def self.jekyll_config
-      Jekyll.configuration({})
+      @JEKYLL_CONFIG || Jekyll.configuration({})
     end
   
     def self.rename
