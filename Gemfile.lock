@@ -83,8 +83,8 @@ GEM
       ffi (~> 1.0)
     rexml (3.2.5)
     rouge (3.28.0)
-    ruby-vips (2.0.17)
-      ffi (~> 1.9)
+    ruby-vips (2.1.4)
+      ffi (~> 1.12)
     safe_yaml (1.0.5)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -110,7 +110,7 @@ DEPENDENCIES
   jekyll-tidy
   jekyll_image_processing!
   minima (~> 2.5)
-  ruby-vips (< 2.1.0)
+  ruby-vips (~> 2.1.4)
   tzinfo (~> 1.2)
   tzinfo-data
   wdm (~> 0.1.1)
