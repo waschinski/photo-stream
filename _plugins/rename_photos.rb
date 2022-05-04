@@ -1,5 +1,9 @@
 module Jekyll
   module RenamePhotos
+    def self.init(site)
+      @JEKYLL_CONFIG = site.config
+    end
+
     def self.jekyll_config
       @JEKYLL_CONFIG || Jekyll.configuration({})
     end
@@ -16,6 +20,10 @@ module Jekyll
        end
     end
   end
+end
+
+Jekyll::Hooks.register :site, :after_init do |jekyll|
+  Jekyll::RenamePhotos.init(jekyll)
 end
   
 Jekyll::Hooks.register :site, :after_reset do
