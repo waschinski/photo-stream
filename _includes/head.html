@@ -5,7 +5,7 @@
 	<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{ site.env.URL }}feed.xml">
 	<meta property="og:title" content="{{ page.title | default: site.env.TITLE }}">
 	<meta property="og:type" content="website">
-	<meta property="og:url" content="{{ page.url | absolute_url }}">
+	<meta property="og:url" content="{{ site.env.URL }}">
 	<meta property="og:image" content="{{ site.env.URL }}{{ page.images[0].name | uri_escape | processed_path: 'large' | default: 'social-preview.png' }}">
 	<meta property="og:site_name" content="{{ site.env.TITLE }}">
 	<meta property="og:description" content="{{ site.env.DESCRIPTION }}">
