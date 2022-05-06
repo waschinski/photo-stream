@@ -35,7 +35,7 @@ Photo Stream is a simpler home for your photos initially created by [@maxvoltar]
 - Keyboard shortcuts
 - Unique URL's for photos
 - RSS feed (Which you can plug into [IFTTT](https://ifttt.com) and set up auto-posting to most social networks, like [@maxvoltar](https://github.com/maxvoltar) has done [here](https://twitter.com/maxvoltar_photo). Make sure you select "Post a tweet with image" when setting it up to embed the photo.)
-- Drag, drop, commit workflow ([learn more about how to add photos to your stream](https://github.com/maxvoltar/photo-stream#how-to-use))
+- Drag, drop, commit workflow ([learn more about how to add photos to your stream](#how-to-use))
 - Optimized light and dark themes (auto-enabled depending on your OS preferences)
 - Optional: Links to your social networks
 
