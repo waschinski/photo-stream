@@ -1,6 +1,9 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+	{% if site.env.ALLOW_INDEXING == "0" %}
+	<meta name="robots" content="noindex" />
+	{% endif %}
 	<title data-title="{{ site.env.TITLE }}">{{ page.title | default: site.env.TITLE }}</title>
 	<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{ site.env.URL }}feed.xml">
 	<meta property="og:title" content="{{ page.title | default: site.env.TITLE }}">
