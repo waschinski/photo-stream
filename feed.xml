@@ -3,7 +3,7 @@
 
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-	<generator uri="https://github.com/maxvoltar/photo-stream">Photo Stream by @maxvoltar</generator>
+	<generator uri="https://github.com/waschinski/photo-stream">Photo Stream</generator>
 	<link href="{{ site.env.URL }}feed.xml" rel="self" type="application/atom+xml" />
 	<link href="{{ site.env.URL }}" rel="alternate" type="text/html"/>
 	<updated>{{ site.time | date_to_xmlschema }}</updated>
