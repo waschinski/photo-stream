@@ -32,7 +32,7 @@
 			{% endif %}
 		</ul>
 		{% include javascript.html %}
-		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+		<script type="text/javascript" src="{{ '/js/toastify.js' | relative_url }}"></script>
 		{% if page.image_slug %}
 			<script src="{{ '/js/photos.js' | relative_url }}" data-photo-id="{{ page.image_slug }}" data-photo-url="{{ page.image_slug | relative_url }}" data-target-id="{{ target }}"></script>
 		{% endif %}

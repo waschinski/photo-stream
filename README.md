@@ -142,6 +142,7 @@ First thing you want to do is edit a couple of things in `/.env`:
 - `ALLOW_ORDER_SORT_CHANGE`: Set this to `1` to allow users to reverse the sort order of the photos
 - `ALLOW_ORIGINAL_DOWNLOAD`: Set this to `1` to allow users to download the photos in their original size
 - `ALLOW_INDEXING`: Set this to `0` to prevent crawlers from indexing your photo stream by adding meta tag `robots`. Defaults to `1`.
+- `ALLOW_IMAGE_SHARING`: Set this to `1` to allow users to share images with friends. Defaults to `1`.
 - `TWITTER_USERNAME`: Your Twitter username or remove/comment this line
 - `GITHUB_USERNAME`: Your Github username or remove/comment this line
 - `INSTAGRAM_USERNAME`: Your Instagram username or remove/comment this line
