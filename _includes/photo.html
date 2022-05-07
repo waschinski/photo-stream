@@ -34,7 +34,7 @@
     {% endunless %}
     <ul class="links top photodetail-links">
         {% if site.env.ALLOW_IMAGE_SHARING == "1" %}
-            <li class="share"><a onClick="shareImage('{{ image.basename }}','{{ slug | relative_url }}');" title="Reverse sort order">Sort</a></li>
+            <li class="share"><a onClick="shareImage('{{ image.basename }}','{{ slug | relative_url }}');" title="Share this photo">Share</a></li>
         {% endif %}
         {% if site.env.ALLOW_ORIGINAL_DOWNLOAD == "1" %}
             <li class="download"><a href="{{ image.path }}" download="{{ safe_name }}" class="" title="Download this image">Download</a></li>

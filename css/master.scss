@@ -231,6 +231,7 @@ body {
 
 				.share  {
 					background-image: url(../img/icon-share.svg);
+					cursor: pointer;
 				}
 
 				.gridview-button {
@@ -388,6 +389,7 @@ body {
 
 		&.share {
 			a {
+				cursor: pointer;
 				background-image: url(../img/icon-share.svg);
 			}
 		}
