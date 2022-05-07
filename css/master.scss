@@ -91,7 +91,11 @@ body {
 		@include dark {
 			outline-color: #000;
 		}
-  }
+  	}
+
+	.photodetail-links {
+		display: none;
+	}
 
 	.item {
 		height: 40vh;
@@ -106,7 +110,7 @@ body {
 
 		&:focus,
 		&:hover {
-			.meta .download {
+			.meta .gridview-button {
 			   visibility: visible;
 		   }
 
@@ -161,8 +165,7 @@ body {
 		}
 
 		.previous,
-		.next,
-		.download {
+		.next {
 			position: absolute;
 			top: 0;
 			bottom: 0;
@@ -201,8 +204,7 @@ body {
 			}
 		}
 
-		.next,
-		.download {
+		.next {
 			right: 0;
 			left: auto;
 			
@@ -214,8 +216,8 @@ body {
 		.meta {
 			display: flex;
 			position: absolute;
-			right: 10px;
-			bottom: 42px;
+			right: 4px;
+			bottom: 12px;
 			color: #fff;
 			text-shadow: #000 0 1px 1px, #000 0 2px 4px;
 			opacity: .5;
@@ -223,11 +225,19 @@ body {
 			li {
 				margin-right: 12px;
 
-				.download {
+				.download  {
+					background-image: url(../img/icon-download.svg);
+				}
+
+				.share  {
+					background-image: url(../img/icon-share.svg);
+					cursor: pointer;
+				}
+
+				.gridview-button {
 					@include button;
 					visibility: hidden;
 					background-color: rgba(200, 200, 200, .5);
-					background-image: url(../img/icon-download.svg);
 
 					&:focus,
 					&:hover {
@@ -257,6 +267,11 @@ body {
 
 			@media (prefers-color-scheme: dark) {
 				background: #000;
+			}
+
+			.photodetail-links {
+				display: flex;
+				z-index: 21;
 			}
 
 			.open {
@@ -293,16 +308,10 @@ body {
 				display: none !important;
 			}
 
-			.previous,
-			.next {
-				display: flex;
-			}
-			.download {
-				display: flex;
+			.photoview-button {
 				height: 75px;
 				
 				span {
-					background-image: url(../img/icon-download.svg);
 
 					&:focus,
 					&:hover {
@@ -314,6 +323,12 @@ body {
 					}
 				}
 			}
+
+			.previous,
+			.next,
+			.download {
+				display: flex;
+			}
 		}
 	}
 }
@@ -322,11 +337,18 @@ body {
 
 .links {
 	position: fixed;
-	bottom: 24px;
 	right: 24px;
 	display: flex;
 	flex-wrap: wrap;
 	margin-left: 16px;
+
+	&.bottom {
+		bottom: 24px;
+	}
+
+	&.top {
+		top: 24px;
+	}
 	
 	li {
 		margin-left: 8px;
@@ -362,6 +384,19 @@ body {
 		&.sort {
 			a {
 				background-image: url(../img/icon-sort.svg);
+			}
+		}
+
+		&.share {
+			a {
+				cursor: pointer;
+				background-image: url(../img/icon-share.svg);
+			}
+		}
+
+		&.download {
+			a {
+				background-image: url(../img/icon-download.svg);
 			}
 		}
 		
@@ -462,25 +497,19 @@ body {
 				span {
 					display: none;
 				}
-			}‚
-
-			.download {
-				width: 25vw;
-				max-width: auto;
 			}
 			
 			.previous {
 				cursor: w-resize;
 			}
 			
-			.next,
-			.download {
+			.next {
 				cursor: e-resize;
 			}
 
 			.meta {
 				li {
-					.download {
+					.gridview-button {
 						visibility: visible;
 					}
 				}
