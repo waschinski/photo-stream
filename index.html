@@ -10,7 +10,7 @@
 		{% assign images = page.images | default: site.static_files | photo_filter %}
 		{% include photos.html %}
 		</ul>
-		<ul class="links">
+		<ul class="links bottom">
 			{% if site.env.ALLOW_ORDER_SORT_CHANGE == "1" %}
 			<li class="sort"><a rel="me" href="#" title="Reverse sort order">Sort</a></li>
 			{% endif %}
@@ -32,6 +32,7 @@
 			{% endif %}
 		</ul>
 		{% include javascript.html %}
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 		{% if page.image_slug %}
 			<script src="{{ '/js/photos.js' | relative_url }}" data-photo-id="{{ page.image_slug }}" data-photo-url="{{ page.image_slug | relative_url }}" data-target-id="{{ target }}"></script>
 		{% endif %}
