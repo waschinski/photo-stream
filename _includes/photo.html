@@ -32,9 +32,14 @@
             <span>Next</span>
         </a>
     {% endunless %}
-    {% if site.env.ALLOW_ORIGINAL_DOWNLOAD == "1" %}
-        <a href="{{ image.path }}" download="{{ safe_name }}" class="download" title="Download this image"><span>Download</span></a>
-    {% endif %}
+    <ul class="links top photodetail-links">
+        {% if site.env.ALLOW_IMAGE_SHARING == "1" %}
+            <li class="share"><a onClick="shareImage('{{ image.basename }}','{{ slug | relative_url }}');" title="Share this photo">Share</a></li>
+        {% endif %}
+        {% if site.env.ALLOW_ORIGINAL_DOWNLOAD == "1" %}
+            <li class="download"><a href="{{ image.path }}" download="{{ safe_name }}" class="" title="Download this image">Download</a></li>
+        {% endif %}
+    </ul>
 
     <ul class="meta">
         <!--
@@ -42,8 +47,11 @@
         <li>{{ image_path | exif: 'exposure_time.to_s'}}</li>
         <li><span class="aperture"><em>f</em>/</span>{{ image_path | exif: 'f_number.to_f'}}</li>
         -->
+        {% if site.env.ALLOW_IMAGE_SHARING == "1" %}
+            <li><a onClick="shareImage('{{ image.basename }}', '{{ slug | relative_url }}')" class="gridview-button share" title="Share this image">Share</a></li>
+        {% endif %}
         {% if site.env.ALLOW_ORIGINAL_DOWNLOAD == "1" %}
-            <li><a href="{{ image.path }}" download="{{ safe_name }}" class="download" title="Download this image">Download</a></li>
+            <li><a href="{{ image.path }}" download="{{ safe_name }}" class="gridview-button download" title="Download this image">Download</a></li>
         {% endif %}
     </ul>
 </li>

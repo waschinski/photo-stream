@@ -6,6 +6,26 @@
   const DOWN = 40;
   const TARGET_CLASS = 'target';
 
+  const shareImage = (title, url) => {
+    if (navigator.canShare) {
+      const shareData = {
+        title: '{{ site.env.TITLE }}',
+        text: `I found a cool photo over at ${title}! Check it out!`,
+        url: url
+      }
+      navigator.share(shareData)
+    } else {
+      navigator.clipboard.writeText(`I found a cool photo over at ${title}! Check it out!\n\n${window.location.origin}${url}`);
+      Toastify({
+        text: "Copied to clipboard",
+        duration: 3000,
+        style: {
+          background: "rgba(0, 0, 0, 0.7)"
+        }
+      }).showToast();
+    }
+  }
+
   const clickNavigationButton = (buttonClass) => {
     const id = window.history.state && window.history.state.id;
     if (id) {
