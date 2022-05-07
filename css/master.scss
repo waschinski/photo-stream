@@ -91,7 +91,11 @@ body {
 		@include dark {
 			outline-color: #000;
 		}
-  }
+  	}
+
+	.photodetail-links {
+		display: none;
+	}
 
 	.item {
 		height: 40vh;
@@ -106,7 +110,7 @@ body {
 
 		&:focus,
 		&:hover {
-			.meta .download {
+			.meta .gridview-button {
 			   visibility: visible;
 		   }
 
@@ -221,11 +225,18 @@ body {
 			li {
 				margin-right: 12px;
 
-				.download {
+				.download  {
+					background-image: url(../img/icon-download.svg);
+				}
+
+				.share  {
+					background-image: url(../img/icon-share.svg);
+				}
+
+				.gridview-button {
 					@include button;
 					visibility: hidden;
 					background-color: rgba(200, 200, 200, .5);
-					background-image: url(../img/icon-download.svg);
 
 					&:focus,
 					&:hover {
@@ -255,6 +266,11 @@ body {
 
 			@media (prefers-color-scheme: dark) {
 				background: #000;
+			}
+
+			.photodetail-links {
+				display: flex;
+				z-index: 21;
 			}
 
 			.open {
@@ -291,26 +307,26 @@ body {
 				display: none !important;
 			}
 
-			.previous,
-			.next {
-				display: flex;
+			.photoview-button {
+				height: 75px;
+				
+				span {
 
-				&.download {
-					height: 75px;
-					
-					span {
-						background-image: url(../img/icon-download.svg);
+					&:focus,
+					&:hover {
+						background-color: rgba(200, 200, 200, .5);
+					}
 
-						&:focus,
-						&:hover {
-							background-color: rgba(200, 200, 200, .5);
-						}
-
-						&:active {
-							background-color: rgba(200, 200, 200, .75);
-						}
+					&:active {
+						background-color: rgba(200, 200, 200, .75);
 					}
 				}
+			}
+
+			.previous,
+			.next,
+			.download {
+				display: flex;
 			}
 		}
 	}
@@ -320,11 +336,18 @@ body {
 
 .links {
 	position: fixed;
-	bottom: 24px;
 	right: 24px;
 	display: flex;
 	flex-wrap: wrap;
 	margin-left: 16px;
+
+	&.bottom {
+		bottom: 24px;
+	}
+
+	&.top {
+		top: 24px;
+	}
 	
 	li {
 		margin-left: 8px;
@@ -360,6 +383,18 @@ body {
 		&.sort {
 			a {
 				background-image: url(../img/icon-sort.svg);
+			}
+		}
+
+		&.share {
+			a {
+				background-image: url(../img/icon-share.svg);
+			}
+		}
+
+		&.download {
+			a {
+				background-image: url(../img/icon-download.svg);
 			}
 		}
 		
@@ -472,7 +507,7 @@ body {
 
 			.meta {
 				li {
-					.download {
+					.gridview-button {
 						visibility: visible;
 					}
 				}
