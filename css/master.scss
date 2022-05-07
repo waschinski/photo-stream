@@ -161,7 +161,8 @@ body {
 		}
 
 		.previous,
-		.next {
+		.next,
+		.download {
 			position: absolute;
 			top: 0;
 			bottom: 0;
@@ -200,7 +201,8 @@ body {
 			}
 		}
 
-		.next {
+		.next,
+		.download {
 			right: 0;
 			left: auto;
 			
@@ -212,8 +214,8 @@ body {
 		.meta {
 			display: flex;
 			position: absolute;
-			right: 4px;
-			bottom: 12px;
+			right: 10px;
+			bottom: 42px;
 			color: #fff;
 			text-shadow: #000 0 1px 1px, #000 0 2px 4px;
 			opacity: .5;
@@ -294,21 +296,21 @@ body {
 			.previous,
 			.next {
 				display: flex;
+			}
+			.download {
+				display: flex;
+				height: 75px;
+				
+				span {
+					background-image: url(../img/icon-download.svg);
 
-				&.download {
-					height: 75px;
-					
-					span {
-						background-image: url(../img/icon-download.svg);
+					&:focus,
+					&:hover {
+						background-color: rgba(200, 200, 200, .5);
+					}
 
-						&:focus,
-						&:hover {
-							background-color: rgba(200, 200, 200, .5);
-						}
-
-						&:active {
-							background-color: rgba(200, 200, 200, .75);
-						}
+					&:active {
+						background-color: rgba(200, 200, 200, .75);
 					}
 				}
 			}
@@ -460,13 +462,19 @@ body {
 				span {
 					display: none;
 				}
+			}‚
+
+			.download {
+				width: 25vw;
+				max-width: auto;
 			}
 			
 			.previous {
 				cursor: w-resize;
 			}
 			
-			.next {
+			.next,
+			.download {
 				cursor: e-resize;
 			}
 

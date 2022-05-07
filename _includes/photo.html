@@ -33,7 +33,7 @@
         </a>
     {% endunless %}
     {% if site.env.ALLOW_ORIGINAL_DOWNLOAD == "1" %}
-        <a href="{{ image.path }}" download="{{ safe_name }}" class="next download" title="Download this image"><span>Download</span></a>
+        <a href="{{ image.path }}" download="{{ safe_name }}" class="download" title="Download this image"><span>Download</span></a>
     {% endif %}
 
     <ul class="meta">
