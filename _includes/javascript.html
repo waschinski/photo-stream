@@ -9,13 +9,13 @@
   const shareImage = (title, url) => {
     if (navigator.canShare) {
       const shareData = {
-        title: '{{ site.env.TITLE }}',
-        text: `I found a cool photo over at ${title}! Check it out!`,
+        title: title,
+        text: 'I found a cool photo over at {{ site.env.TITLE }}! Check it out!',
         url: url
       }
       navigator.share(shareData)
     } else {
-      navigator.clipboard.writeText(`I found a cool photo over at ${title}! Check it out!\n\n${window.location.origin}${url}`);
+      navigator.clipboard.writeText(`I found a cool photo over at {{ site.env.TITLE }}! Check it out!\n\n${window.location.origin}${url}`);
       Toastify({
         text: "Copied to clipboard",
         duration: 3000,
