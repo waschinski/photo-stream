@@ -4,19 +4,26 @@
 
 Photo Stream is a simpler home for your photos initially created by [@maxvoltar](https://github.com/maxvoltar/photo-stream) and now maintained by [@waschinski](https://github.com/waschinski) and [friends](#credits). Easy to use, self hosted, no tracking, just photos.
 
-- [Examples](#examples)
+- [Demo](#demo)
+- [Live Examples](#live-examples)
 - [Features](#features)
 - [Why?](#why)
 - [How to Install](#how-to-install)
     - [Using docker](#using-docker)
     - [Manually](#manually)
+- [How to deploy directly in the cloud](#how-to-deploy-directly-in-the-cloud)
+    - [On Render](#on-render)
 - [How to use](#how-to-use)
 - [Customize](#customize)
     - [Basics](#basics)
     - [Advanced](#advanced)
 - [Credits](#credits)
 
-## Examples
+## Demo
+
+There is a [demo](https://photo-stream-muh3.onrender.com/) of this repository hosted on a Free Plan on [Render](https://render-web.onrender.com/).
+
+## Live Examples
 
 - [floremotion.de](https://floremotion.de)
 - [maxvoltar.photo](https://maxvoltar.photo)
@@ -99,6 +106,12 @@ Once all these requirements are met you can finally install all the gems require
 ```sh
 bundle install
 ```
+
+## How to deploy directly in the cloud
+
+### On Render
+
+Fork this repo and add your own photos to the `photos/original` folder. Log in to your Render account or create a new one. Create a new static site on the Render Dashboard. Connect your Github account and select your photo-stream repository. Select the correct branch and adjust the Build Command (`bundle exec jekyll build`) and Publish Directory (`_site`). Under Advanced you `Add Secret File` and create a `.env` file containing your adjusted environment variables. You might be able to change this file directly in your repo and skip the former step (adding a secret file) but I haven't tested this.
 
 ## How to use
 
