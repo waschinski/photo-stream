@@ -236,7 +236,9 @@ body {
 
 				.gridview-button {
 					@include button;
-					visibility: hidden;
+					@media not all and (hover: none) {
+						visibility: hidden;
+					}
 					background-color: rgba(200, 200, 200, .5);
 
 					&:focus,
