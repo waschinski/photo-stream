@@ -1,4 +1,4 @@
-ARG  BASE_IMAGE=ruby:3.0.3-alpine3.15
+ARG  BASE_IMAGE=ruby:3.1.2-alpine3.15
 FROM ${BASE_IMAGE}
 
 ENV VIPSVER 8.12.2
