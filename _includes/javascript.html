@@ -51,12 +51,12 @@
     if (navigator.canShare) {
       const shareData = {
         title: title,
-        text: 'I found a cool photo over at {{ site.env.TITLE }}! Check it out!',
+        text: 'I found a cool photo over at {{ site.env.TITLE | smartify }}! Check it out!',
         url: url
       }
       navigator.share(shareData)
     } else {
-      navigator.clipboard.writeText(`I found a cool photo over at {{ site.env.TITLE }}! Check it out!\n\n${window.location.origin}${url}`);
+      navigator.clipboard.writeText(`I found a cool photo over at {{ site.env.TITLE | smartify }}! Check it out!\n\n${window.location.origin}${url}`);
       Toastify({
         text: "Copied to clipboard",
         duration: 3000,
