@@ -17,7 +17,7 @@ gem "minima", "~> 2.5"
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem "webrick", "~> 1.7"
-  gem "exifr"
+  gem 'exiftool'
   gem "ruby-vips", "~> 2.1.4"
   gem "jekyll_image_processing", git: "https://github.com/benubois/jekyll_image_processing"
   gem "jekyll-tidy"
