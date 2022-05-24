@@ -1,19 +1,15 @@
-require "exifr"
+require "exiftool"
 
 module Jekyll
   module PhotoFilter
     def photo_filter(files)
       photos = files.select {|photo| photo.relative_path.include?("original") }
       sorted = photos.sort_by { |photo|
-        (EXIFR::JPEG.new(photo.path).exif? && EXIFR::JPEG.new(photo.path).date_time_original ?
-        EXIFR::JPEG.new(photo.path).date_time_original.to_s :
+        (Exiftool.new(photo.path)[:date_time_original] ?
+        Exiftool.new(photo.path)[:date_time_original] :
         photo.modified_time.to_s)
       }
-      sorted.each do |photo|
-        (EXIFR::JPEG.new(photo.path).exif? && EXIFR::JPEG.new(photo.path).date_time_original ?
-        EXIFR::JPEG.new(photo.path).date_time_original.to_s :
-        photo.modified_time.to_s)
-      end.reverse
+      sorted.reverse
     end
   end
 end
