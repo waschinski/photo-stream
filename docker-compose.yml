@@ -8,7 +8,7 @@ services:
     #   context: .
     #   args:
     ##     - DEBUG=true
-    ##     - BASE_IMAGE=arm32v6/ruby:3.0.1-alpine3.12 # arm base image for RPI
+    ##     - BASE_IMAGE=arm32v6/ruby:3.1.2-alpine3.16 # arm base image for RPI
     environment:
       - TITLE=${TITLE}
       - EMAIL=${EMAIL}

@@ -74,7 +74,7 @@ The `photos` folder can be mounted as a volume. Make sure to put your photos in 
 
 Prerequisites : docker and docker-compose are installed on RPI
 
-In docker-compose.yml comment `image` section, uncomment `build` section, and setup `BASE_REPO` arg to `arm32v6/ruby:3.0.1-alpine3.12`.
+In docker-compose.yml comment `image` section, uncomment `build` section, and setup `BASE_IMAGE` arg to `arm32v6/ruby:3.1.2-alpine3.16`.
 
 Then `docker-compose build`
 
