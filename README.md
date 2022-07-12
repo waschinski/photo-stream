@@ -9,7 +9,7 @@ Photo Stream is a simpler home for your photos initially created by [@maxvoltar]
 - [Features](#features)
 - [Why?](#why)
 - [How to Install](#how-to-install)
-    - [Using docker](#using-docker)
+    - [Using Docker](#using-docker)
     - [Manually](#manually)
 - [How to deploy directly](#how-to-deploy-directly)
     - [on Render](#on-render)
@@ -54,7 +54,7 @@ We like to take photos and share them. Problem is it's hard to really own your p
 
 Previously the recommended way to install Photo Stream was to fork the repository. In my opinion this was not really optimal and being a fan of Docker I began working on optimizations to run Photo Stream in a container. That's why configuration has been moved from `_config.yml` to `.env` so when switching from the initial repo you will have to set up the `.env` file accordingly.
 
-### Using docker
+### Using Docker
 
 There is an image over at [Docker Hub](https://hub.docker.com/r/waschinski/photo-stream) which you can pull using:
 
@@ -70,7 +70,7 @@ docker-compose up -d
 
 The `photos` folder can be mounted as a volume. Make sure to put your photos in a folder called `original`.
 
-#### Using docker on raspberry pi:
+#### Using Docker on Raspberry Pi (`linux/arm/v6` only):
 
 Prerequisites : docker and docker-compose are installed on RPI
 
