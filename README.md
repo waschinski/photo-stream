@@ -151,7 +151,7 @@ First thing you want to do is edit a couple of things in `/.env`:
 - `DESCRIPTION`: Description of your photo stream
 - `BASEURL`: Should be left empty or removed **⚠️ Do not change unless you know what you're doing**
 - `URL`: Where will this photo stream live (example: `https://maxvoltar.photo/`), must end with / or links will be broken
-- `SHOW_RSS_BUTTON`: Set to either `1` or `0` to enable or disable showing the RSS feed button
+- `SHOW_RSS_FEED`: Set to either `1` or `0` to enable or disable showing the RSS feed button
 - `SHOW_OFFICIAL_GITHUB`: Set to either `1` or `0` to enable or disable showing the link to the official github repository
 - `ALLOW_ORDER_SORT_CHANGE`: Set this to `1` to allow users to reverse the sort order of the photos
 - `ALLOW_ORIGINAL_DOWNLOAD`: Set this to `1` to allow users to download the photos in their original size
