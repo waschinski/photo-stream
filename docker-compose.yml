@@ -23,7 +23,7 @@ services:
       - INSTAGRAM_USERNAME=${INSTAGRAM_USERNAME}
       - ALLOW_ORIGINAL_DOWNLOAD=${ALLOW_ORIGINAL_DOWNLOAD}
     volumes:
-      - ${PHOTO_PATH}:/photo-stream/photos/original
+      - ${PHOTO_PATH}:/photo-stream/photos
     env_file: .env
     ports:
       - "4000:4000"
