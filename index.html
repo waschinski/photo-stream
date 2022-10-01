@@ -7,7 +7,11 @@
 <body>
 	{% assign target = "target" %}
 	<ul class="grid" id="{{ target }}">
-		{% assign images = page.images | default: site.static_files | photo_filter %}
+		{% if site.env.DEFAULT_REVERSE_SORT == "1" %}
+			{% assign images = page.images | default: site.static_files | photo_filter | reverse %}
+		{% else %}
+			{% assign images = page.images | default: site.static_files | photo_filter %}
+		{% endif %}
 		{% include photos.html %}
 		</ul>
 		<ul class="links bottom">
