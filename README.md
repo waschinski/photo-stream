@@ -33,6 +33,7 @@ There is a [demo](https://photo-stream-muh3.onrender.com/) of this repository ho
 - [photo.silvandaehn.com](https://photo.silvandaehn.com/)
 - [chriszeta.it](https://chriszeta.it)
 - [rafa.photo](https://rafa.photo)
+- [instantanes.loeuillet.org](https://instantanes.loeuillet.org/)
 
 ## Features
 
