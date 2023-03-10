@@ -38,7 +38,9 @@
 			{% endif %}
 		</ul>
 		{% include javascript.html %}
+		{% if site.env.ALLOW_IMAGE_SHARING == "1" %}
 		<script type="text/javascript" src="{{ '/js/toastify.js' | relative_url }}"></script>
+		{% endif %}
 		{% if page.image_slug %}
 			<script src="{{ '/js/photos.js' | relative_url }}" data-photo-id="{{ page.image_slug }}" data-photo-url="{{ page.image_slug | relative_url }}" data-target-id="{{ target }}"></script>
 		{% endif %}
