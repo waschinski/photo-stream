@@ -1,3 +1,4 @@
+=begin
 require "exifr"
 
 module Jekyll
@@ -18,3 +19,4 @@ module Jekyll
   end
 end
 Liquid::Template.register_filter(Jekyll::PhotoFilter)
+=end
