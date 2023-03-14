@@ -14,13 +14,13 @@ module Jekyll
       # exiftag -  title, decription, file_size, create_date, megapixels, ...
       def exif(file, exiftag)
         exiftag = exiftag.to_sym
-        filepath = File.expand_path(File.dirname(File.dirname(__FILE__))) + file
+        filepath = File.expand_path(File.dirname(File.dirname(__FILE__))) + '/' + file
 
         begin
           if File.exist?(filepath)
             e = Exiftool.new(filepath)
             e.to_hash.key?(exiftag)
-            e[:title]
+            e[exiftag]
           end
 
         rescue StandardError => e  
