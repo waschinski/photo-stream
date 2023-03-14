@@ -17,11 +17,10 @@ gem "minima", "~> 2.5"
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem "webrick", "~> 1.7"
-  gem 'exiftool'
+  gem "exiftool_vendored", "~> 12.57"
   gem "ruby-vips", "~> 2.1.4"
   gem "jekyll_image_processing", git: "https://github.com/benubois/jekyll_image_processing"
   gem "jekyll-tidy"
-  gem "jekyll-exif-data", "~> 0.0"
   gem 'jekyll-dotenv'
   gem "htmlbeautifier", "<1.4.0"
 end
@@ -35,4 +34,3 @@ end
 
 # Performance-booster for watching directories on Windows
 gem "wdm", "~> 0.1.1", :install_if => Gem.win_platform?
-

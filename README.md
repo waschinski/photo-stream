@@ -38,6 +38,7 @@ There is a [demo](https://photo-stream-muh3.onrender.com/) of this repository ho
 
 - Lazy loading
 - Only load larger resolutions when needed (to save on bandwidth)
+- Supports [PNG, JPG, JPEG, GIF and WebP](https://github.com/benubois/jekyll_image_processing/blob/master/lib/jekyll_image_processing/processed_image.rb#L38) files
 - Photo tints
 - Keyboard shortcuts
 - Unique URL's for photos
