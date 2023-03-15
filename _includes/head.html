@@ -22,7 +22,9 @@
 	<meta name="description" content="{{ site.env.DESCRIPTION }}">
 	<script type="text/javascript" src="{{ '/js/lazy-loading.js' | relative_url }}"></script>
 	<link rel="stylesheet" type="text/css" media="screen" href="{{ '/css/master.css' | relative_url }}" />
+	{% if site.env.ALLOW_IMAGE_SHARING == "1" %}
 	<link rel="stylesheet" type="text/css" href="{{ '/css/toastify.min.css' | relative_url }}">
+	{% endif %}
 	<link rel="shortcut icon" type="image/svg+xml" href="{{ '/favicon.svg' | relative_url }}" />
 	<link rel="shortcut icon" type="image/png" href="{{ '/favicon.png' | relative_url }}" />
 	<link rel="apple-touch-icon" href="touch-icon-iphone.png" />

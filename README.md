@@ -9,7 +9,7 @@ Photo Stream is a simpler home for your photos initially created by [@maxvoltar]
 - [Features](#features)
 - [Why?](#why)
 - [How to Install](#how-to-install)
-    - [Using docker](#using-docker)
+    - [Using Docker](#using-docker)
     - [Manually](#manually)
 - [How to deploy directly](#how-to-deploy-directly)
     - [on Render](#on-render)
@@ -33,6 +33,7 @@ There is a [demo](https://photo-stream-muh3.onrender.com/) of this repository ho
 - [photo.silvandaehn.com](https://photo.silvandaehn.com/)
 - [chriszeta.it](https://chriszeta.it)
 - [rafa.photo](https://rafa.photo)
+- [instantanes.loeuillet.org](https://instantanes.loeuillet.org/)
 
 ## Features
 
@@ -55,7 +56,7 @@ We like to take photos and share them. Problem is it's hard to really own your p
 
 Previously the recommended way to install Photo Stream was to fork the repository. In my opinion this was not really optimal and being a fan of Docker I began working on optimizations to run Photo Stream in a container. That's why configuration has been moved from `_config.yml` to `.env` so when switching from the initial repo you will have to set up the `.env` file accordingly.
 
-### Using docker
+### Using Docker
 
 There is an image over at [Docker Hub](https://hub.docker.com/r/waschinski/photo-stream) which you can pull using:
 
@@ -71,11 +72,11 @@ docker-compose up -d
 
 The `photos` folder can be mounted as a volume. Make sure to put your photos in a folder called `original`.
 
-#### Using docker on raspberry pi:
+#### Using Docker on Raspberry Pi (`linux/arm/v6` only):
 
 Prerequisites : docker and docker-compose are installed on RPI
 
-In docker-compose.yml comment `image` section, uncomment `build` section, and setup `BASE_REPO` arg to `arm32v6/ruby:3.0.1-alpine3.12`.
+In docker-compose.yml comment `image` section, uncomment `build` section, and setup `BASE_IMAGE` arg to `arm32v6/ruby:3.1.2-alpine3.16`.
 
 Then `docker-compose build`
 
@@ -144,26 +145,28 @@ sh ./_script/build-n-lftp.sh
 
 First thing you want to do is edit a couple of things in `/.env`:
 
-- `TITLE`: The title of your photo stream
-- `EMAIL`: Your email address (this line is optional, you can remove it)
-- `AUTHOR_NAME`: Your name
-- `AUTHOR_EMAIL`: Your email address (optional)
-- `AUTHOR_WEBSITE`: Your website (could be the address of this photo stream)
-- `DESCRIPTION`: Description of your photo stream
+- `TITLE`: The title of your photo stream.
+- `EMAIL`: Your email address (this line is optional, you can remove it).
+- `AUTHOR_NAME`: Your name.
+- `AUTHOR_EMAIL`: Your email address (optional).
+- `AUTHOR_WEBSITE`: Your website (could be the address of this photo stream).
+- `DESCRIPTION`: Description of your photo stream.
 - `BASEURL`: Should be left empty or removed **⚠️ Do not change unless you know what you're doing**
-- `URL`: Where will this photo stream live (example: `https://maxvoltar.photo/`), must end with / or links will be broken
-- `SHOW_OFFICIAL_GITHUB`: Set to either `1` or `0` to enable or disable showing the link to the official github repository
-- `ALLOW_ORDER_SORT_CHANGE`: Set this to `1` to allow users to reverse the sort order of the photos
-- `ALLOW_ORIGINAL_DOWNLOAD`: Set this to `1` to allow users to download the photos in their original size
+- `URL`: Where will this photo stream live (example: `https://maxvoltar.photo/`), must end with / or links will be broken.
+- `SHOW_RSS_FEED`: Set to either `1` or `0` to enable or disable showing the RSS feed button.
+- `SHOW_OFFICIAL_GITHUB`: Set to either `1` or `0` to enable or disable showing the link to the official github repository.
+- `DEFAULT_REVERSE_SORT`: Set this to `1` to reverse the photo sort order and show oldest photos first. Defaults to `0`.
+- `ALLOW_ORDER_SORT_CHANGE`: Set this to `1` to allow users to reverse the sort order of the photos.
+- `ALLOW_ORIGINAL_DOWNLOAD`: Set this to `1` to allow users to download the photos in their original size.
 - `ALLOW_INDEXING`: Set this to `0` to prevent crawlers from indexing your photo stream by adding meta tag `robots`. Defaults to `1`.
 - `ALLOW_IMAGE_SHARING`: Set this to `1` to allow users to share images with friends. Defaults to `1`.
-- `TWITTER_USERNAME`: Your Twitter username or remove/comment this line
-- `GITHUB_USERNAME`: Your Github username or remove/comment this line
-- `INSTAGRAM_USERNAME`: Your Instagram username or remove/comment this line
-- `SYNCUSER`: Your username being used by lftp/rsync in the shell scripts to sync your site to your webserver
-- `SYNCPASS`: Your password being used by lftp/rsync in the shell scripts to sync your site to your webserver
-- `SYNCSERVER`: The URL of your webserver being used by lftp/rsync in the shell scripts where your site will be synced to
-- `SYNCFOLDER`: The folder on your webserver being used by lftp/rsync in the shell scripts where your site will be synced to
+- `TWITTER_USERNAME`: Your Twitter username or remove/comment this line.
+- `GITHUB_USERNAME`: Your Github username or remove/comment this line.
+- `INSTAGRAM_USERNAME`: Your Instagram username or remove/comment this line.
+- `SYNCUSER`: Your username being used by lftp/rsync in the shell scripts to sync your site to your webserver.
+- `SYNCPASS`: Your password being used by lftp/rsync in the shell scripts to sync your site to your webserver.
+- `SYNCSERVER`: The URL of your webserver being used by lftp/rsync in the shell scripts where your site will be synced to.
+- `SYNCFOLDER`: The folder on your webserver being used by lftp/rsync in the shell scripts where your site will be synced to.
 
 Don't include the `@`-part of your social handles. Links to your Github, Twitter and Instagram profiles are only shown when set.
 
