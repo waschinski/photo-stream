@@ -1,8 +1,8 @@
-ARG  BASE_IMAGE=ruby:3.1.2-alpine3.15
+ARG  BASE_IMAGE=ruby:3.1.3-alpine3.17
 FROM ${BASE_IMAGE}
 
-ENV VIPSVER 8.12.2
-ENV EXIFTOOLVER 12.41
+ENV VIPSVER 8.14.1
+ENV EXIFTOOLVER 12.57
 RUN apk update && apk upgrade &&\
     apk add --update --no-cache build-base glib-dev libexif-dev expat-dev tiff-dev jpeg-dev libpng libgsf-dev git rsync lftp openssh perl &&\
     rm -rf /var/cache/apk/*
