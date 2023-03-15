@@ -6,7 +6,7 @@
 	<meta name="robots" content="noindex" />
 	{% endif %}
 	<title data-title="{{ site.env.TITLE }}">{{ page.title | default: site.env.TITLE }}</title>
-	<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{ site.env.URL }}feed.xml">
+	<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{ site.env.URL }}/feed.xml">
 	<meta property="og:title" content="{{ page.title | default: site.env.TITLE }}">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="{{ site.env.URL }}">
