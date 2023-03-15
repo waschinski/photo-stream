@@ -7,14 +7,20 @@
 <body>
 	{% assign target = "target" %}
 	<ul class="grid" id="{{ target }}">
-		{% assign images = page.images | default: site.static_files | photo_filter %}
+		{% if site.env.DEFAULT_REVERSE_SORT == "1" %}
+			{% assign images = page.images | default: site.static_files | photo_filter | reverse %}
+		{% else %}
+			{% assign images = page.images | default: site.static_files | photo_filter %}
+		{% endif %}
 		{% include photos.html %}
 		</ul>
 		<ul class="links bottom">
 			{% if site.env.ALLOW_ORDER_SORT_CHANGE == "1" %}
 			<li class="sort"><a rel="me" href="#" title="Reverse sort order">Sort</a></li>
 			{% endif %}
+			{% if site.env.SHOW_RSS_FEED == "1" %}
 			<li class="rss"><a rel="alternate" type="application/rss+xml" href="{{ site.env.URL }}feed.xml" title="RSS Feed">RSS Feed</a></li>
+			{% endif %}
 			{% if site.env.SHOW_OFFICIAL_GITHUB == "1" %}
 			<li class="github"><a rel="me" href="https://github.com/waschinski/photo-stream" title="Fork on Github">Github</a></li>
 			{% endif %}
@@ -32,7 +38,9 @@
 			{% endif %}
 		</ul>
 		{% include javascript.html %}
+		{% if site.env.ALLOW_IMAGE_SHARING == "1" %}
 		<script type="text/javascript" src="{{ '/js/toastify.js' | relative_url }}"></script>
+		{% endif %}
 		{% if page.image_slug %}
 			<script src="{{ '/js/photos.js' | relative_url }}" data-photo-id="{{ page.image_slug }}" data-photo-url="{{ page.image_slug | relative_url }}" data-target-id="{{ target }}"></script>
 		{% endif %}

@@ -8,7 +8,7 @@ services:
     #   context: .
     #   args:
     ##     - DEBUG=true
-    ##     - BASE_IMAGE=arm32v6/ruby:3.0.1-alpine3.12 # arm base image for RPI
+    ##     - BASE_IMAGE=arm32v6/ruby:3.1.2-alpine3.16 # arm base image for RPI
     environment:
       - TITLE=${TITLE}
       - EMAIL=${EMAIL}
@@ -18,12 +18,13 @@ services:
       - DESCRIPTION=${DESCRIPTION}
       - BASEURL=${BASEURL}
       - URL=${URL}
+      - SHOW_RSS_FEED=${SHOW_RSS_FEED}
       - SHOW_OFFICIAL_GITHUB=${SHOW_OFFICIAL_GITHUB}
       - TWITTER_USERNAME=${TWITTER_USERNAME}
       - INSTAGRAM_USERNAME=${INSTAGRAM_USERNAME}
       - ALLOW_ORIGINAL_DOWNLOAD=${ALLOW_ORIGINAL_DOWNLOAD}
     volumes:
-      - ${PHOTO_PATH}:/photo-stream/photos/original
+      - ${PHOTO_PATH}:/photo-stream/photos
     env_file: .env
     ports:
       - "4000:4000"
