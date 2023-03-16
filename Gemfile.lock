@@ -20,7 +20,7 @@ GEM
     eventmachine (1.2.7)
     exiftool (1.2.4)
       json
-    exiftool_vendored (12.57.0)
+    exiftool_vendored (12.50.0)
       exiftool (>= 0.7.0)
     ffi (1.15.5)
     forwardable-extended (2.6.0)
@@ -108,7 +108,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  exiftool_vendored (~> 12.57)
+  exiftool_vendored (= 12.50)
   htmlbeautifier (< 1.4.0)
   jekyll (~> 4.3.0)
   jekyll-dotenv
