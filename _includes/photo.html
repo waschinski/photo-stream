@@ -44,8 +44,8 @@
     <ul class="meta">
         <!--
         <li>{{ image_path | exif: 'model'}}</li>
-        <li>{{ image_path | exif: 'exposure_time.to_s'}}</li>
-        <li><span class="aperture"><em>f</em>/</span>{{ image_path | exif: 'f_number.to_f'}}</li>
+        <li>{{ image_path | exif: 'exposure_time'}}</li>
+        <li><span class="aperture"><em>f</em>/</span>{{ image_path | exif: 'aperture_value'}}</li>
         -->
         {% if site.env.ALLOW_IMAGE_SHARING == "1" %}
             <li><a onClick="shareImage('{{ image.basename }}', '{{ slug | relative_url }}')" class="gridview-button share" title="Share this image">Share</a></li>

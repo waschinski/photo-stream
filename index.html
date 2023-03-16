@@ -6,7 +6,12 @@
 {% include head.html %}
 <body>
 	{% assign target = "target" %}
-	<ul class="grid" id="{{ target }}">
+	{% if site.env.HEADER_ENABLED == "1" %}
+	{% assign headerbgcolor = 'background-color: ' | append: site.env.HEADER_BACKGROUND_COLOR | append: ';' %}
+	<header id="page-title" style="{{ headerbgcolor }}">{{ site.env.TITLE }}</header>
+	{% endif %}
+	<main>
+		<ul class="grid" id="{{ target }}">
 		{% if site.env.DEFAULT_REVERSE_SORT == "1" %}
 			{% assign images = page.images | default: site.static_files | photo_filter | reverse %}
 		{% else %}
@@ -19,7 +24,7 @@
 			<li class="sort"><a rel="me" href="#" title="Reverse sort order">Sort</a></li>
 			{% endif %}
 			{% if site.env.SHOW_RSS_FEED == "1" %}
-			<li class="rss"><a rel="alternate" type="application/rss+xml" href="{{ site.env.URL }}feed.xml" title="RSS Feed">RSS Feed</a></li>
+			<li class="rss"><a rel="alternate" type="application/rss+xml" href="{{ site.env.URL }}/feed.xml" title="RSS Feed">RSS Feed</a></li>
 			{% endif %}
 			{% if site.env.SHOW_OFFICIAL_GITHUB == "1" %}
 			<li class="github"><a rel="me" href="https://github.com/waschinski/photo-stream" title="Fork on Github">Github</a></li>
@@ -37,12 +42,13 @@
 			<li class="link"><a rel="me" href="{{ site.env.CUSTOM_LINK_URL }}" title="{{ site.env.CUSTOM_LINK_NAME }}">{{ site.env.CUSTOM_LINK_NAME }}</a></li>
 			{% endif %}
 		</ul>
-		{% include javascript.html %}
-		{% if site.env.ALLOW_IMAGE_SHARING == "1" %}
-		<script type="text/javascript" src="{{ '/js/toastify.js' | relative_url }}"></script>
-		{% endif %}
-		{% if page.image_slug %}
-			<script src="{{ '/js/photos.js' | relative_url }}" data-photo-id="{{ page.image_slug }}" data-photo-url="{{ page.image_slug | relative_url }}" data-target-id="{{ target }}"></script>
-		{% endif %}
+	</main>
+	{% include javascript.html %}
+	{% if site.env.ALLOW_IMAGE_SHARING == "1" %}
+	<script type="text/javascript" src="{{ '/js/toastify.js' | relative_url }}"></script>
+	{% endif %}
+	{% if page.image_slug %}
+	<script src="{{ '/js/photos.js' | relative_url }}" data-photo-id="{{ page.image_slug }}" data-photo-url="{{ page.image_slug | relative_url }}" data-target-id="{{ target }}"></script>
+	{% endif %}
 </body>
 </html>

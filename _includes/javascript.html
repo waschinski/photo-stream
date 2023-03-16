@@ -78,10 +78,12 @@
 
   const openPhoto = (id, href) => {
     const photo = document.getElementById(id);
-    const title = photo.getAttribute('title');
+    const phototitle = photo.getAttribute('title');
     removeTargetClass();
     photo.classList.add(TARGET_CLASS);
-    document.title = title;
+    document.title = phototitle;
+    {% if site.env.HEADER_ENABLED == "1" %}const title = document.querySelector('head title').getAttribute('data-title');
+    document.getElementById('page-title').innerHTML = title + '<span id="breadcrumb">//</span>' + phototitle;{% endif %}
     if (href) {
       window.history.pushState({id: id}, '', href);
     }
@@ -91,6 +93,7 @@
     const title = document.querySelector('head title').getAttribute('data-title');
     removeTargetClass();
     document.title = title;
+    {% if site.env.HEADER_ENABLED == "1" %}document.getElementById('page-title').innerHTML = title;{% endif %}
     if (href) {
       window.history.pushState({}, '', href);
     }

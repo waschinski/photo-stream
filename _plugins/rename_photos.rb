@@ -10,7 +10,7 @@ module Jekyll
   
     def self.rename
       directory = jekyll_config["image_processing"]["large"]["source"]
-      Dir.glob("#{directory}/*.[jJ][pP]*[gG]").each do |filename|
+      Dir.glob("#{directory}/*").each do |filename|
         file = File.new(filename)
         dir = File.dirname(file.path)
         name = File.basename(file.path, ".*")
