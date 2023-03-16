@@ -58,11 +58,9 @@
 body,
 html {
 	min-height: 100%;
-	display: flex;
 }
 
 body {
-	flex-grow: 1;
 	font: 16px/24px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	background: #fff;
 	color: #2e2f30;
@@ -71,6 +69,27 @@ body {
 		background: #000;
 		color: #eee;
 	}
+}
+
+// HEADER
+
+header {
+	position: sticky;
+	top: 0;
+	height: 60px;
+	padding: 18px 0 0 24px;
+	z-index: 10;
+}
+
+header span#breadcrumb {
+	margin-left: 16px;
+	margin-right: 16px;
+}
+
+// MAIN
+
+main {
+	display: flex;
 }
 
 // PHOTO GRID
@@ -257,11 +276,19 @@ body {
 
 		&.target {
 			position: fixed;
+			{% if site.env.HEADER_ENABLED == "1" %}
+			top: 60px;
+			{% else %}
 			top: 0;
+			{% endif %}
 			right: 0;
 			bottom: 0;
 			left: 0;
+			{% if site.env.HEADER_ENABLED == "1" %}
+			height: calc(100% - 60px);
+			{% else %}
 			height: 100%;
+			{% endif %}
 			z-index: 10;
 			background: #fff;
 			display: flex;
@@ -349,7 +376,11 @@ body {
 	}
 
 	&.top {
+		{% if site.env.HEADER_ENABLED == "1" %}
+		top: 14px;
+		{% else %}
 		top: 24px;
+		{% endif %}
 	}
 	
 	li {
