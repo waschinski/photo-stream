@@ -1,15 +1,9 @@
 ARG  BASE_IMAGE=ruby:3.1.3-alpine3.17
 FROM ${BASE_IMAGE}
 
-ENV VIPSVER 8.14.1
-ENV EXIFTOOLVER 12.57
 RUN apk update && apk upgrade &&\
-    apk add --update --no-cache build-base glib-dev libexif-dev expat-dev tiff-dev jpeg-dev libpng libgsf-dev git rsync lftp openssh perl &&\
+    apk add --update --no-cache build-base glib-dev exiftool libexif-dev expat-dev tiff-dev jpeg-dev libpng libgsf-dev vips git rsync lftp openssh perl &&\
     rm -rf /var/cache/apk/*
-
-RUN wget -O ./vips-$VIPSVER.tar.gz https://github.com/libvips/libvips/releases/download/v$VIPSVER/vips-$VIPSVER.tar.gz && tar -xvzf ./vips-$VIPSVER.tar.gz && cd vips-$VIPSVER && ./configure && make && make install && cd .. && rm -r vips-$VIPSVER.tar.gz vips-$VIPSVER
-
-RUN wget -O ./Image-ExifTool-$EXIFTOOLVER.tar.gz https://exiftool.org/Image-ExifTool-$EXIFTOOLVER.tar.gz && gzip -dc Image-ExifTool-$EXIFTOOLVER.tar.gz | tar -xf - && cd Image-ExifTool-$EXIFTOOLVER && perl Makefile.PL && make install && cd .. && rm -r Image-ExifTool-$EXIFTOOLVER.tar.gz Image-ExifTool-$EXIFTOOLVER
 
 COPY ./ /photo-stream
 
