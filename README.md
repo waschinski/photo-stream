@@ -2,7 +2,7 @@
 
 # Photo Stream
 
-Photo Stream is a simpler home for your photos initially created by [@maxvoltar](https://github.com/maxvoltar/photo-stream) and now maintained by [@waschinski](https://github.com/waschinski), [@boerniee](https://github.com/boerniee) and [friends](https://github.com/waschinski/photo-stream/graphs/contributors). Easy to use, self hosted, no tracking, just photos.
+Photo Stream is a simpler home for your photos initially created by [@maxvoltar](https://github.com/maxvoltar) and now maintained by [@waschinski](https://github.com/waschinski), [@boerniee](https://github.com/boerniee) and [friends](https://github.com/waschinski/photo-stream/graphs/contributors). Easy to use, self hosted, no tracking, just photos.
 
 - [Demo](#demo)
 - [Live Examples](#live-examples)
@@ -26,14 +26,10 @@ There is a [demo](https://photo-stream-muh3.onrender.com/) of this repository ho
 ## Live Examples
 
 - [floremotion.de](https://floremotion.de)
-- [maxvoltar.photo](https://maxvoltar.photo)
-- [joeyabanks.photo](https://joeyabanks.photo)
 - [photos.alexbaldwin.com](https://photos.alexbaldwin.com)
-- [jad.photos](https://jad.photos)
-- [photo.silvandaehn.com](https://photo.silvandaehn.com/)
-- [chriszeta.it](https://chriszeta.it)
+- [photo.silvandaehn.com](https://photo.silvandaehn.com)
 - [rafa.photo](https://rafa.photo)
-- [instantanes.loeuillet.org](https://instantanes.loeuillet.org/)
+- [instantanes.loeuillet.org](https://instantanes.loeuillet.org)
 
 ## Features
 
