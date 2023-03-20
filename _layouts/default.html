@@ -1,7 +1,15 @@
 <!doctype html>
-<html>
-  {% include head.html %}
-  <body>
-    {{ content }}
-  </body>
+<html class="notranslate" translate="no">
+{% include head.html %}
+<body>
+	  {% if site.env.HEADER_ENABLED == "1" %}
+		{% assign headerbgcolor = 'background-color: ' | append: site.env.HEADER_BACKGROUND_COLOR | append: ';' %}
+		<header id="page-title" style="{{ headerbgcolor }}">{{ site.env.TITLE }}</header>
+		{% endif %}
+		<main>
+			<ul class="grid">
+		      {{ content }}
+		  </ul>
+    </main>
+</body>
 </html>
