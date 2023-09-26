@@ -8,7 +8,10 @@
 	{% assign target = "target" %}
 	{% if site.env.HEADER_ENABLED == "1" %}
 	{% assign headerbgcolor = 'background-color: ' | append: site.env.HEADER_BACKGROUND_COLOR | append: ';' %}
+	<header id="page-title" style="background-color: #ffffff;">Instantanés, par Nicolas Lœuillet</header>
+	<!--
 	<header id="page-title" style="{{ headerbgcolor }}">{{ site.env.TITLE }}</header>
+	-->
 	{% endif %}
 	<main>
 		<ul class="grid" id="{{ target }}">
