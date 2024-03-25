@@ -10,15 +10,15 @@
 	<meta property="og:title" content="{{ page.title | default: site.env.TITLE }}">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="{{ site.env.URL }}">
-	<meta property="og:image" content="{{ site.env.URL }}{{ page.images[0].name | uri_escape | processed_path: 'large' | default: 'social-preview.png' }}">
+	<meta property="og:image" content="{{ site.env.URL }}/{{ page.images[0].name | uri_escape | processed_path: 'large' | default: 'social-preview.png' }}">
 	<meta property="og:site_name" content="{{ site.env.TITLE }}">
 	<meta property="og:description" content="{{ site.env.DESCRIPTION }}">
-	<meta name="thumbnail" content="{{ site.env.URL }}{{ page.images[0].name | uri_escape | processed_path: 'large' | default: 'social-preview.png' }}">
+	<meta name="thumbnail" content="{{ site.env.URL }}/{{ page.images[0].name | uri_escape | processed_path: 'large' | default: 'social-preview.png' }}">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:site" content="{{ site.env.TWITTER_USERNAME }}">
 	<meta name="twitter:title" content="{{ page.title | default: site.env.TITLE }}">
 	<meta name="twitter:description" content="{{ site.env.DESCRIPTION }}">
-	<meta name="twitter:image:src" content="{{ site.env.URL }}{{ page.images[0].name | uri_escape | processed_path: 'large' | default: 'social-preview.png' }}">
+	<meta name="twitter:image:src" content="{{ site.env.URL }}/{{ page.images[0].name | uri_escape | processed_path: 'large' | default: 'social-preview.png' }}">
 	<meta name="description" content="{{ site.env.DESCRIPTION }}">
 	<script type="text/javascript" src="{{ '/js/lazy-loading.js' | relative_url }}"></script>
 	<link rel="stylesheet" type="text/css" media="screen" href="{{ '/css/master.css' | relative_url }}" />
