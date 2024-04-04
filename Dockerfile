@@ -1,4 +1,4 @@
-ARG  BASE_IMAGE=ruby:3.1.3-alpine3.17
+ARG  BASE_IMAGE=ruby:3.3.0-alpine3.19
 FROM ${BASE_IMAGE}
 
 RUN apk update && apk upgrade &&\
