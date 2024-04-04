@@ -27,19 +27,31 @@
 			<li class="rss"><a rel="alternate" type="application/rss+xml" href="{{ site.env.URL }}/feed.xml" title="RSS Feed">RSS Feed</a></li>
 			{% endif %}
 			{% if site.env.SHOW_OFFICIAL_GITHUB == "1" %}
-			<li class="github"><a rel="me" href="https://github.com/waschinski/photo-stream" title="Fork on Github">Github</a></li>
+			<li class="github"><a rel="me" href="https://github.com/waschinski/photo-stream" title="Fork on Github" target="_blank">Github</a></li>
 			{% endif %}
 			{% if site.env.TWITTER_USERNAME != "" %}
-			<li class="twitter"><a rel="me" href="https://twitter.com/{{ site.env.TWITTER_USERNAME }}" title="@{{ site.env.TWITTER_USERNAME }} on Twitter">Twitter</a></li>
+			<li class="twitter"><a rel="me" href="https://twitter.com/{{ site.env.TWITTER_USERNAME }}" title="@{{ site.env.TWITTER_USERNAME }} on Twitter" target="_blank">Twitter</a></li>
 			{% endif %}
 			{% if site.env.GITHUB_USERNAME != "" %}
-			<li class="github"><a rel="me" href="https://github.com/{{ site.env.GITHUB_USERNAME }}" title="@{{ site.env.GITHUB_USERNAME }} on Github">Github</a></li>
+			<li class="github"><a rel="me" href="https://github.com/{{ site.env.GITHUB_USERNAME }}" title="@{{ site.env.GITHUB_USERNAME }} on Github" target="_blank">Github</a></li>
 			{% endif %}
 			{% if site.env.INSTAGRAM_USERNAME != "" %}
-			<li class="instagram"><a rel="me" href="https://instagram.com/{{ site.env.INSTAGRAM_USERNAME }}" title="@{{ site.env.INSTAGRAM_USERNAME }} on Instagram">Instagram</a></li>
+			<li class="instagram"><a rel="me" href="https://instagram.com/{{ site.env.INSTAGRAM_USERNAME }}" title="@{{ site.env.INSTAGRAM_USERNAME }} on Instagram" target="_blank">Instagram</a></li>
 			{% endif %}
+
+			{% assign json_str = site.env.AUTHOR_LINKS | remove: '[' | remove: ']' %}
+			{% assign json_token = json_str | split: ',' %}
+			{% for token in json_token %}
+				{% assign res = token | split: '":"' %}
+				{% assign link_icon = res[0] | remove: '"' %}
+				{% assign link_url = res[1] | remove: '"' %}
+				<li class="simpleicon"><a rel="me" href="{{ link_url }}" title="{{ link_url }}" target="_blank">
+					<object type="image/svg+xml" data="https://cdn.simpleicons.org/{{ link_icon }}/black"></object>
+				</a></li>
+			{% endfor %}
+
 			{% if site.env.CUSTOM_LINK_URL != "" and site.env.CUSTOM_LINK_NAME != "" %}
-			<li class="link"><a rel="me" href="{{ site.env.CUSTOM_LINK_URL }}" title="{{ site.env.CUSTOM_LINK_NAME }}">{{ site.env.CUSTOM_LINK_NAME }}</a></li>
+			<li class="link"><a rel="me" href="{{ site.env.CUSTOM_LINK_URL }}" title="{{ site.env.CUSTOM_LINK_NAME }}" target="_blank">{{ site.env.CUSTOM_LINK_NAME }}</a></li>
 			{% endif %}
 		</ul>
 	</main>

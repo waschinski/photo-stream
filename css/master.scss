@@ -90,6 +90,7 @@ header span#breadcrumb {
 
 main {
 	display: flex;
+	flex-grow: 1;
 }
 
 // PHOTO GRID
@@ -444,6 +445,17 @@ main {
 				color: rgba(0, 0, 0, .75);
 				font-weight: 600;
 				text-decoration: none;
+			}
+		}
+
+		&.simpleicon {
+			a {
+				text-indent: 0;
+            	padding: 6px;
+
+				object {
+					pointer-events: none;
+				}
 			}
 		}
 	}

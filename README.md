@@ -88,7 +88,7 @@ Make sure you meet the following requirements in order to run Photo Stream:
 
 How to install these depends on your OS. Debian users will go with `sudo apt-get install build-essential` while on MacOS you should be fine with `xcode-select --install`.
 
-#### Ruby (v3+ recommended)
+#### Ruby (v3+ required)
 
 Check to see if you already have Ruby installed (`ruby -v`). If you don't, you can follow the installation instructions provided [here](https://www.ruby-lang.org/en/documentation/installation/).
 
@@ -146,7 +146,7 @@ First thing you want to do is edit a couple of things in `/.env`:
 - `AUTHOR_NAME`: Your name.
 - `AUTHOR_EMAIL`: Your email address (optional).
 - `AUTHOR_WEBSITE`: Your website (could be the address of this photo stream).
-- `DESCRIPTION`: Description of your photo stream.
+- `AUTHOR_LINKS`: A JSON string containing icon names and links to your social media presence (example: `["github":"https://github.com/maxvoltar","x":"https://twitter.com/maxvoltar","instagram":"https://www.instagram.com/maxvoltar"]`). Make sure the icon names are matching the name of the [Simple Icons](https://simpleicons.org) you want to use. Make sure to put single ticks (`'`)around the JSON string when setting this via the `.env` file.
 - `BASEURL`: Should be left empty or removed **⚠️ Do not change unless you know what you're doing**
 - `URL`: Where will this photo stream live (example: `https://maxvoltar.photo`), must NOT end with / or links will be messed up.
 - `SHOW_RSS_FEED`: Set to either `1` or `0` to enable or disable showing the RSS feed button.
@@ -156,9 +156,9 @@ First thing you want to do is edit a couple of things in `/.env`:
 - `ALLOW_ORIGINAL_DOWNLOAD`: Set this to `1` to allow users to download the photos in their original size.
 - `ALLOW_INDEXING`: Set this to `0` to prevent crawlers from indexing your photo stream by adding meta tag `robots`. Defaults to `1`.
 - `ALLOW_IMAGE_SHARING`: Set this to `1` to allow users to share images with friends. Defaults to `1`.
-- `TWITTER_USERNAME`: Your Twitter username or remove/comment this line.
-- `GITHUB_USERNAME`: Your Github username or remove/comment this line.
-- `INSTAGRAM_USERNAME`: Your Instagram username or remove/comment this line.
+- `TWITTER_USERNAME`: Your Twitter username or remove/comment this line. DEPRECATED - Use `AUTHOR_LINKS` instead.
+- `GITHUB_USERNAME`: Your Github username or remove/comment this line. DEPRECATED - Use `AUTHOR_LINKS` instead.
+- `INSTAGRAM_USERNAME`: Your Instagram username or remove/comment this line. DEPRECATED - Use `AUTHOR_LINKS` instead.
 - `SYNCUSER`: Your username being used by lftp/rsync in the shell scripts to sync your site to your webserver.
 - `SYNCPASS`: Your password being used by lftp/rsync in the shell scripts to sync your site to your webserver.
 - `SYNCSERVER`: The URL of your webserver being used by lftp/rsync in the shell scripts where your site will be synced to.
