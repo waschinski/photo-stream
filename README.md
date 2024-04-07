@@ -146,7 +146,7 @@ First thing you want to do is edit a couple of things in `/.env`:
 - `AUTHOR_NAME`: Your name.
 - `AUTHOR_EMAIL`: Your email address (optional).
 - `AUTHOR_WEBSITE`: Your website (could be the address of this photo stream).
-- `AUTHOR_LINKS`: A JSON string containing icon names and links to your social media presence (example: `["github":"https://github.com/maxvoltar","x":"https://twitter.com/maxvoltar","instagram":"https://www.instagram.com/maxvoltar"]`). Make sure the icon names are matching the name of the [Simple Icons](https://simpleicons.org) you want to use. Make sure to put single ticks (`'`)around the JSON string when setting this via the `.env` file.
+- `AUTHOR_LINKS`: A JSON string containing icon names and links to your social media presence (example: `["github":"https://github.com/maxvoltar","x":"https://twitter.com/maxvoltar","instagram":"https://www.instagram.com/maxvoltar"]`). Make sure the icon names are matching the name of the [Simple Icons](https://simpleicons.org) you want to use. You will have to put single ticks (`'`) around the JSON string when setting this via the `.env` file.
 - `BASEURL`: Should be left empty or removed **⚠️ Do not change unless you know what you're doing**
 - `URL`: Where will this photo stream live (example: `https://maxvoltar.photo`), must NOT end with / or links will be messed up.
 - `SHOW_RSS_FEED`: Set to either `1` or `0` to enable or disable showing the RSS feed button.
@@ -163,8 +163,6 @@ First thing you want to do is edit a couple of things in `/.env`:
 - `SYNCPASS`: Your password being used by lftp/rsync in the shell scripts to sync your site to your webserver.
 - `SYNCSERVER`: The URL of your webserver being used by lftp/rsync in the shell scripts where your site will be synced to.
 - `SYNCFOLDER`: The folder on your webserver being used by lftp/rsync in the shell scripts where your site will be synced to.
-
-Don't include the `@`-part of your social handles. Links to your Github, Twitter and Instagram profiles are only shown when set.
 
 ### Advanced
 
