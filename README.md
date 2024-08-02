@@ -25,7 +25,6 @@ There is a [demo](https://photo-stream-muh3.onrender.com/) of this repository ho
 
 ## Live Examples
 
-- [floremotion.de](https://floremotion.de)
 - [photos.alexbaldwin.com](https://photos.alexbaldwin.com)
 - [photo.silvandaehn.com](https://photo.silvandaehn.com)
 - [rafa.photo](https://rafa.photo)
