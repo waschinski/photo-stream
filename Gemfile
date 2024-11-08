@@ -16,7 +16,7 @@ gem "minima", "~> 2.5"
 # gem "github-pages", group: :jekyll_plugins
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-  gem "webrick", "~> 1.7"
+  gem "webrick", "~> 1.8"
   gem "exiftool_vendored", "12.50"
   gem "ruby-vips", "~> 2.1.4"
   gem "jekyll_image_processing", git: "https://github.com/benubois/jekyll_image_processing"
